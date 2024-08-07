@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 class LoginModel extends FlutterFlowModel<LoginWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // State field(s) for correo widget.
   FocusNode? correoFocusNode;
   TextEditingController? correoTextController;
@@ -23,7 +22,6 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     correoFocusNode?.dispose();
     correoTextController?.dispose();
 

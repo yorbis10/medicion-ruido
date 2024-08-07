@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'pagina_inicio_widget.dart' show PaginaInicioWidget;
+import 'menu_aministracion_widget.dart' show MenuAministracionWidget;
 import 'package:flutter/material.dart';
 
-class PaginaInicioModel extends FlutterFlowModel<PaginaInicioWidget> {
+class MenuAministracionModel extends FlutterFlowModel<MenuAministracionWidget> {
   @override
   void initState(BuildContext context) {}
 

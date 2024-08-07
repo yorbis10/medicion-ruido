@@ -74,9 +74,7 @@ class _Dash1WidgetState extends State<Dash1Widget>
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => _model.unfocusNode.canRequestFocus
-          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-          : FocusScope.of(context).unfocus(),
+      onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -116,7 +114,7 @@ class _Dash1WidgetState extends State<Dash1Widget>
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.pushNamed('Perfil');
+                              context.pushNamed('PerfilAdmin');
                             },
                             child: Container(
                               width: 44.0,
@@ -131,13 +129,18 @@ class _Dash1WidgetState extends State<Dash1Widget>
                               ),
                               child: Padding(
                                 padding: const EdgeInsets.all(2.0),
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(44.0),
-                                  child: Image.network(
-                                    'https://cdn-icons-png.flaticon.com/512/4122/4122901.png',
-                                    width: 44.0,
-                                    height: 44.0,
-                                    fit: BoxFit.cover,
+                                child: AuthUserStreamWidget(
+                                  builder: (context) => ClipRRect(
+                                    borderRadius: BorderRadius.circular(44.0),
+                                    child: Image.network(
+                                      valueOrDefault<String>(
+                                        currentUserPhoto,
+                                        'https://cdn-icons-png.flaticon.com/512/4122/4122901.png',
+                                      ),
+                                      width: 44.0,
+                                      height: 44.0,
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -162,7 +165,13 @@ class _Dash1WidgetState extends State<Dash1Widget>
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
-                                          context.pushNamed('Perfil');
+                                          if (valueOrDefault<bool>(
+                                              currentUserDocument?.esAdmin,
+                                              false)) {
+                                            context.pushNamed('PerfilAdmin');
+                                          } else {
+                                            context.pushNamed('PerfilUsuario');
+                                          }
                                         },
                                         child: Text(
                                           currentUserDisplayName,

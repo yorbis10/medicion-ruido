@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '/backend/backend.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
@@ -80,9 +81,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               appStateNotifier.loggedIn ? const Dash1Widget() : const PaginaInicioWidget(),
         ),
         FFRoute(
-          name: 'Registro',
-          path: '/registro',
-          builder: (context, params) => const RegistroWidget(),
+          name: 'RegistroUsuario',
+          path: '/registroUsuario',
+          builder: (context, params) => const RegistroUsuarioWidget(),
         ),
         FFRoute(
           name: 'login',
@@ -100,9 +101,47 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const Dash1Widget(),
         ),
         FFRoute(
-          name: 'Perfil',
-          path: '/perfil',
-          builder: (context, params) => const PerfilWidget(),
+          name: 'PerfilAdmin',
+          path: '/perfilAdmin2',
+          builder: (context, params) => const PerfilAdminWidget(),
+        ),
+        FFRoute(
+          name: 'EditarPerfil',
+          path: '/editarPerfil',
+          builder: (context, params) => const EditarPerfilWidget(),
+        ),
+        FFRoute(
+          name: 'RecuperarClave',
+          path: '/recuperarClave',
+          builder: (context, params) => const RecuperarClaveWidget(),
+        ),
+        FFRoute(
+          name: 'PerfilUsuario',
+          path: '/perfilUsuario',
+          builder: (context, params) => const PerfilUsuarioWidget(),
+        ),
+        FFRoute(
+          name: 'AdministrarUsuarios',
+          path: '/administrarUsuarios',
+          builder: (context, params) => const AdministrarUsuariosWidget(),
+        ),
+        FFRoute(
+          name: 'MenuAministracion',
+          path: '/menuAministracion',
+          builder: (context, params) => const MenuAministracionWidget(),
+        ),
+        FFRoute(
+          name: 'Detalleusuario',
+          path: '/Detalleusuario',
+          asyncParams: {
+            'detalleUsuario': getDoc(['users'], UsersRecord.fromSnapshot),
+          },
+          builder: (context, params) => DetalleusuarioWidget(
+            detalleUsuario: params.getParam(
+              'detalleUsuario',
+              ParamType.Document,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

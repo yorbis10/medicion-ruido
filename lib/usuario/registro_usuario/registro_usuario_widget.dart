@@ -5,25 +5,25 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'registro_model.dart';
-export 'registro_model.dart';
+import 'registro_usuario_model.dart';
+export 'registro_usuario_model.dart';
 
-class RegistroWidget extends StatefulWidget {
-  const RegistroWidget({super.key});
+class RegistroUsuarioWidget extends StatefulWidget {
+  const RegistroUsuarioWidget({super.key});
 
   @override
-  State<RegistroWidget> createState() => _RegistroWidgetState();
+  State<RegistroUsuarioWidget> createState() => _RegistroUsuarioWidgetState();
 }
 
-class _RegistroWidgetState extends State<RegistroWidget> {
-  late RegistroModel _model;
+class _RegistroUsuarioWidgetState extends State<RegistroUsuarioWidget> {
+  late RegistroUsuarioModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => RegistroModel());
+    _model = createModel(context, () => RegistroUsuarioModel());
 
     _model.nombreTextController ??= TextEditingController();
     _model.nombreFocusNode ??= FocusNode();
@@ -53,9 +53,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => _model.unfocusNode.canRequestFocus
-          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-          : FocusScope.of(context).unfocus(),
+      onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,

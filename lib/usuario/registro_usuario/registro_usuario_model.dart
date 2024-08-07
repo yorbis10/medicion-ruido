@@ -1,11 +1,10 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'registro_widget.dart' show RegistroWidget;
+import 'registro_usuario_widget.dart' show RegistroUsuarioWidget;
 import 'package:flutter/material.dart';
 
-class RegistroModel extends FlutterFlowModel<RegistroWidget> {
+class RegistroUsuarioModel extends FlutterFlowModel<RegistroUsuarioWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // State field(s) for nombre widget.
   FocusNode? nombreFocusNode;
   TextEditingController? nombreTextController;
@@ -37,7 +36,6 @@ class RegistroModel extends FlutterFlowModel<RegistroWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     nombreFocusNode?.dispose();
     nombreTextController?.dispose();
 

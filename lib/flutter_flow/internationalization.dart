@@ -105,7 +105,7 @@ Locale createLocale(String language) => language.contains('_')
     : Locale(language);
 
 final kTranslationsMap = <Map<String, Map<String, String>>>[
-  // Registro
+  // RegistroUsuario
   {
     'w531dvea': {
       'es': 'Monitoreo y Alerta de Contaminación Acústica ',
@@ -182,13 +182,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Iniciar sesión',
       'en': 'Log in',
     },
-    '0vdtqabf': {
-      'es': '¿No tienes una cuenta?  ',
-      'en': 'You do not have an account?',
-    },
     '1qhjel88': {
       'es': 'Registrate aquí',
       'en': 'sign up here',
+    },
+    'kahc4m9v': {
+      'es': '¿Olvidaste la clave?',
+      'en': '',
     },
     'mfyuz3o2': {
       'es': 'Home',
@@ -299,15 +299,19 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'home',
     },
   },
-  // Perfil
+  // PerfilAdmin
   {
     '7fnt7kbp': {
       'es': 'Active',
       'en': 'Active',
     },
     'lz2n0zo6': {
-      'es': 'Editar perfil',
+      'es': 'Editar Perfil',
       'en': 'Edit profile',
+    },
+    'qnq7h7ay': {
+      'es': 'Cambiar Contraseña',
+      'en': '',
     },
     'gamjts0z': {
       'es': 'Configuracion de la cuenta',
@@ -322,8 +326,194 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '__',
     },
   },
+  // EditarPerfil
+  {
+    'k0vxdd43': {
+      'es': 'Cambiar Contraseña',
+      'en': '',
+    },
+    '257l0k26': {
+      'es': 'Guardar Cambios',
+      'en': '',
+    },
+    'pra5ag6x': {
+      'es': 'Editar perfil',
+      'en': '',
+    },
+  },
+  // RecuperarClave
+  {
+    'mle41a9i': {
+      'es': 'Has olvidado tu contraseña',
+      'en': '',
+    },
+    'tdlcm4ob': {
+      'es':
+          'Le enviaremos un correo electrónico con un enlace para restablecer su contraseña; ingrese el correo electrónico asociado con su cuenta a continuación.',
+      'en': '',
+    },
+    'ayuklw2h': {
+      'es': 'Correo electronico ...',
+      'en': '',
+    },
+    'hchqh82b': {
+      'es': 'Ecribe tu correo ...',
+      'en': '',
+    },
+    '4cx6gnlh': {
+      'es': 'Recuperar',
+      'en': '',
+    },
+    'fd1iidfw': {
+      'es': 'Atras',
+      'en': '',
+    },
+    'wa825cy3': {
+      'es': 'Home',
+      'en': 'home',
+    },
+  },
+  // PerfilUsuario
+  {
+    'yg1r02kp': {
+      'es': 'Editar Perfil',
+      'en': '',
+    },
+    'g3g3rn49': {
+      'es': 'Cambiar Contraseña',
+      'en': '',
+    },
+    '08powxhm': {
+      'es': 'Cerrar sesión',
+      'en': '',
+    },
+    'p5cu33np': {
+      'es': '__',
+      'en': '',
+    },
+  },
+  // AdministrarUsuarios
+  {
+    'wn8g8ms0': {
+      'es': 'Buscar...',
+      'en': '',
+    },
+    'a6yzujlr': {
+      'es': 'Conincidencia de busqueda',
+      'en': '',
+    },
+    '08qyz6hf': {
+      'es': '24',
+      'en': '',
+    },
+    'lrng6657': {
+      'es': 'Buscar Usuarios',
+      'en': '',
+    },
+    '4zq0q4kd': {
+      'es': 'Home',
+      'en': 'home',
+    },
+  },
+  // MenuAministracion
+  {
+    'p2mp4roa': {
+      'es': 'Este es el munu para los usuarios con rol de administrador',
+      'en': '',
+    },
+    '8ag2yi0d': {
+      'es': 'Menu Administracion',
+      'en': '',
+    },
+    'g6tlcyj2': {
+      'es': 'Usuarios',
+      'en': '',
+    },
+    'lcykfkva': {
+      'es': 'Tableros',
+      'en': '',
+    },
+    'n1pl51rp': {
+      'es': '56.4k',
+      'en': '',
+    },
+    '3hsqsgxs': {
+      'es': 'Customers',
+      'en': '',
+    },
+    'bsesskj7': {
+      'es': '56.4k',
+      'en': '',
+    },
+    'flp5ulgz': {
+      'es': 'Customers',
+      'en': '',
+    },
+    'zwv83t39': {
+      'es': 'Home',
+      'en': 'home',
+    },
+  },
+  // Detalleusuario
+  {
+    'csgzi2eo': {
+      'es': 'Activo',
+      'en': '',
+    },
+    '7gdltopx': {
+      'es': '',
+      'en': '',
+    },
+    'oq63vs4h': {
+      'es': 'Administrador',
+      'en': '',
+    },
+    '2v9kn4ay': {
+      'es': '',
+      'en': '',
+    },
+    '1swir9bp': {
+      'es': 'Eliminar',
+      'en': '',
+    },
+    'm3zjshu0': {
+      'es': 'Home',
+      'en': 'home',
+    },
+  },
+  // CambiarClave
+  {
+    'vjyexf7b': {
+      'es': 'Cambiar la contraseña',
+      'en': '',
+    },
+    'io5t7hlr': {
+      'es': 'Contraseña actual',
+      'en': '',
+    },
+    '6xosvjrv': {
+      'es': 'Nueva contraseña',
+      'en': '',
+    },
+    'iuovvwrc': {
+      'es': 'Confirmar nueva contraseña',
+      'en': '',
+    },
+    'l9varrp3': {
+      'es': 'Cambiar la contraseña',
+      'en': '',
+    },
+  },
   // Miscellaneous
   {
+    '3dx6ti5b': {
+      'es': '',
+      'en': '',
+    },
+    '5doy0473': {
+      'es': '',
+      'en': '',
+    },
     'ssei8db2': {
       'es': '',
       'en': 'Error',
