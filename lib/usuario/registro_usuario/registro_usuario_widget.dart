@@ -99,13 +99,15 @@ class _RegistroUsuarioWidgetState extends State<RegistroUsuarioWidget> {
                                     32.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    'w531dvea' /* Monitoreo y Alerta de Contamin... */,
+                                    'w531dvea' /* MACA */,
                                   ),
                                   textAlign: TextAlign.start,
                                   style: FlutterFlowTheme.of(context)
                                       .displaySmall
                                       .override(
                                         fontFamily: 'Inter',
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
                                         letterSpacing: 0.0,
                                       ),
                                 ),
@@ -598,6 +600,25 @@ class _RegistroUsuarioWidgetState extends State<RegistroUsuarioWidget> {
                                             phoneNumber: _model
                                                 .telefonoTextController.text,
                                           ));
+
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        SnackBar(
+                                          content: Text(
+                                            'Cuenta creada correctamente',
+                                            style: TextStyle(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                            ),
+                                          ),
+                                          duration:
+                                              const Duration(milliseconds: 4000),
+                                          backgroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondary,
+                                        ),
+                                      );
 
                                       context.pushNamedAuth(
                                           'login', context.mounted);

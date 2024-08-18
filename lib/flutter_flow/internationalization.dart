@@ -108,7 +108,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // RegistroUsuario
   {
     'w531dvea': {
-      'es': 'Monitoreo y Alerta de Contaminación Acústica ',
+      'es': 'MACA',
       'en': 'Noise Pollution Monitoring and Alerts',
     },
     'ndp48nv5': {
@@ -159,11 +159,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // login
   {
     'fcf8sww7': {
-      'es': 'Monitoreo y Alerta de Contaminación Acústica ',
+      'es': 'MACA',
       'en': 'Noise Pollution Monitoring and Alerts',
     },
     'jbm0vj4k': {
-      'es': 'Bienvenido de nuevo',
+      'es': 'Monitoreo y Alerta de Contaminación Acústica ',
       'en': 'Welcome back',
     },
     '2inq44ae': {
@@ -197,13 +197,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // PaginaInicio
   {
-    'yzdx0dhz': {
-      'es': 'Monitoreo y Alerta de Contaminación Acústica ',
+    'w8wi580t': {
+      'es': 'MACA',
       'en': 'Noise Pollution Monitoring and Alerts',
     },
     '70bb80nr': {
-      'es':
-          '¡Gracias por unirte! ¡Acceda o cree su cuenta a continuación y comience su viaje!',
+      'es': 'Monitoreo y Alerta de Contaminación Acústica ',
       'en':
           'Thank you for joining! Log in or create your account below and start your journey!',
     },
@@ -211,9 +210,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Ingresar',
       'en': 'Get into',
     },
-    'kk3i0bg2': {
+    'csgbpopf': {
       'es': 'Home',
-      'en': 'home',
+      'en': '',
     },
   },
   // dash1
@@ -301,10 +300,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // PerfilAdmin
   {
-    '7fnt7kbp': {
-      'es': 'Active',
-      'en': 'Active',
-    },
     'lz2n0zo6': {
       'es': 'Editar Perfil',
       'en': 'Edit profile',
@@ -314,12 +309,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'gamjts0z': {
-      'es': 'Configuracion de la cuenta',
+      'es': 'Panel de Administacion',
       'en': 'Account settings',
     },
     't02xr18p': {
       'es': 'Cerrar sesión',
       'en': 'Sign off',
+    },
+    '8bbey2lz': {
+      'es': 'Perfil de Administración',
+      'en': '',
     },
     'm0s6wl0q': {
       'es': '__',
@@ -328,15 +327,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // EditarPerfil
   {
-    'k0vxdd43': {
-      'es': 'Cambiar Contraseña',
-      'en': '',
-    },
     '257l0k26': {
       'es': 'Guardar Cambios',
       'en': '',
     },
-    'pra5ag6x': {
+    'ncna7nbx': {
       'es': 'Editar perfil',
       'en': '',
     },
@@ -364,8 +359,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Recuperar',
       'en': '',
     },
-    'fd1iidfw': {
-      'es': 'Atras',
+    'xstolvq4': {
+      'es': 'Recuperación de Contraseña',
       'en': '',
     },
     'wa825cy3': {
@@ -383,8 +378,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Cambiar Contraseña',
       'en': '',
     },
+    'w5hdj8z1': {
+      'es': 'Eliminar Cuenta',
+      'en': '',
+    },
     '08powxhm': {
       'es': 'Cerrar sesión',
+      'en': '',
+    },
+    'h3s495y9': {
+      'es': 'Perfil de Usuario',
       'en': '',
     },
     'p5cu33np': {
@@ -406,8 +409,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '24',
       'en': '',
     },
-    'lrng6657': {
-      'es': 'Buscar Usuarios',
+    '7zg1c4qw': {
+      'es': 'Gestionar Usuarios',
       'en': '',
     },
     '4zq0q4kd': {
@@ -449,6 +452,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Customers',
       'en': '',
     },
+    'yxabhsv4': {
+      'es': 'Panel de Administración',
+      'en': '',
+    },
     'zwv83t39': {
       'es': 'Home',
       'en': 'home',
@@ -456,16 +463,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Detalleusuario
   {
-    'csgzi2eo': {
-      'es': 'Activo',
-      'en': '',
-    },
-    '7gdltopx': {
-      'es': '',
-      'en': '',
-    },
     'oq63vs4h': {
-      'es': 'Administrador',
+      'es': 'Es Administrador',
       'en': '',
     },
     '2v9kn4ay': {
@@ -479,6 +478,42 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'm3zjshu0': {
       'es': 'Home',
       'en': 'home',
+    },
+  },
+  // pass55
+  {
+    'aa8miz9p': {
+      'es': 'Back',
+      'en': '',
+    },
+    '5f45e282': {
+      'es': 'Forgot Password',
+      'en': '',
+    },
+    '96n751n1': {
+      'es':
+          'We will send you an email with a link to reset your password, please enter the email associated with your account below.',
+      'en': '',
+    },
+    '96keum7e': {
+      'es': 'Your email address...',
+      'en': '',
+    },
+    'ura0f8xg': {
+      'es': 'Enter your email...',
+      'en': '',
+    },
+    '5qx2kzje': {
+      'es': 'Send Link',
+      'en': '',
+    },
+    'j75o20hv': {
+      'es': 'Page Title',
+      'en': '',
+    },
+    'jwq5qu3k': {
+      'es': 'Home',
+      'en': '',
     },
   },
   // CambiarClave
@@ -501,6 +536,21 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'l9varrp3': {
       'es': 'Cambiar la contraseña',
+      'en': '',
+    },
+  },
+  // EliminarUsuario
+  {
+    'gftuzb6t': {
+      'es': 'Deseas eliminar la cuenta del usuario?',
+      'en': '',
+    },
+    '73fzdvpu': {
+      'es': 'Eliminar Cuenta',
+      'en': '',
+    },
+    'qgqt0jia': {
+      'es': 'Cancelar',
       'en': '',
     },
   },

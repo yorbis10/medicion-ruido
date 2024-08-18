@@ -7,9 +7,7 @@ class DetalleusuarioModel extends FlutterFlowModel<DetalleusuarioWidget> {
 
   DateTime? datePicked;
   // State field(s) for SwitchListTile widget.
-  bool? switchListTileValue1;
-  // State field(s) for SwitchListTile widget.
-  bool? switchListTileValue2;
+  bool? switchListTileValue;
 
   @override
   void initState(BuildContext context) {}

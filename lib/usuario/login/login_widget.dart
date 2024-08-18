@@ -84,13 +84,14 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 32.0, 0.0, 0.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
-                                'fcf8sww7' /* Monitoreo y Alerta de Contamin... */,
+                                'fcf8sww7' /* MACA */,
                               ),
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
                                   .displaySmall
                                   .override(
                                     fontFamily: 'Inter',
+                                    color: FlutterFlowTheme.of(context).primary,
                                     letterSpacing: 0.0,
                                   ),
                             ),
@@ -107,7 +108,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                               children: [
                                 Text(
                                   FFLocalizations.of(context).getText(
-                                    'jbm0vj4k' /* Bienvenido de nuevo */,
+                                    'jbm0vj4k' /* Monitoreo y Alerta de Contamin... */,
                                   ),
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)

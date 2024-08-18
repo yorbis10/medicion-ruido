@@ -13,10 +13,12 @@ class CambiarClaveModel extends FlutterFlowModel<CambiarClaveWidget> {
   FocusNode? nuevaClaveFocusNode;
   TextEditingController? nuevaClaveTextController;
   String? Function(BuildContext, String?)? nuevaClaveTextControllerValidator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode;
-  TextEditingController? textController3;
-  String? Function(BuildContext, String?)? textController3Validator;
+  // State field(s) for confirmaClave widget.
+  FocusNode? confirmaClaveFocusNode;
+  TextEditingController? confirmaClaveTextController;
+  String? Function(BuildContext, String?)? confirmaClaveTextControllerValidator;
+  // Stores action output result for [Custom Action - changePassword] action in Button widget.
+  bool? isChange;
 
   @override
   void initState(BuildContext context) {}
@@ -29,7 +31,7 @@ class CambiarClaveModel extends FlutterFlowModel<CambiarClaveWidget> {
     nuevaClaveFocusNode?.dispose();
     nuevaClaveTextController?.dispose();
 
-    textFieldFocusNode?.dispose();
-    textController3?.dispose();
+    confirmaClaveFocusNode?.dispose();
+    confirmaClaveTextController?.dispose();
   }
 }

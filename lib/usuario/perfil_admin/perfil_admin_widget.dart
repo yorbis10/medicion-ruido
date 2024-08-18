@@ -114,17 +114,17 @@ class _PerfilAdminWidgetState extends State<PerfilAdminWidget>
       'containerOnPageLoadAnimation1': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
-          VisibilityEffect(duration: 1.ms),
+          VisibilityEffect(duration: 200.ms),
           FadeEffect(
             curve: Curves.easeInOut,
-            delay: 0.0.ms,
+            delay: 200.0.ms,
             duration: 600.0.ms,
             begin: 0.0,
             end: 1.0,
           ),
           MoveEffect(
             curve: Curves.easeInOut,
-            delay: 0.0.ms,
+            delay: 200.0.ms,
             duration: 600.0.ms,
             begin: const Offset(0.0, 60.0),
             end: const Offset(0.0, 0.0),
@@ -152,26 +152,6 @@ class _PerfilAdminWidgetState extends State<PerfilAdminWidget>
         ],
       ),
       'containerOnPageLoadAnimation3': AnimationInfo(
-        trigger: AnimationTrigger.onPageLoad,
-        effectsBuilder: () => [
-          VisibilityEffect(duration: 200.ms),
-          FadeEffect(
-            curve: Curves.easeInOut,
-            delay: 200.0.ms,
-            duration: 600.0.ms,
-            begin: 0.0,
-            end: 1.0,
-          ),
-          MoveEffect(
-            curve: Curves.easeInOut,
-            delay: 200.0.ms,
-            duration: 600.0.ms,
-            begin: const Offset(0.0, 60.0),
-            end: const Offset(0.0, 0.0),
-          ),
-        ],
-      ),
-      'containerOnPageLoadAnimation4': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           VisibilityEffect(duration: 300.ms),
@@ -237,29 +217,36 @@ class _PerfilAdminWidgetState extends State<PerfilAdminWidget>
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         appBar: AppBar(
-          backgroundColor: Colors.white,
+          backgroundColor: FlutterFlowTheme.of(context).primary,
           automaticallyImplyLeading: false,
-          actions: [
-            Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
-              child: FlutterFlowIconButton(
-                borderColor: Colors.transparent,
-                borderRadius: 30.0,
-                borderWidth: 1.0,
-                buttonSize: 60.0,
-                icon: Icon(
-                  Icons.close_rounded,
-                  color: FlutterFlowTheme.of(context).secondaryText,
-                  size: 30.0,
-                ),
-                onPressed: () async {
-                  context.pop();
-                },
-              ),
+          leading: FlutterFlowIconButton(
+            borderColor: Colors.transparent,
+            borderRadius: 30.0,
+            borderWidth: 1.0,
+            buttonSize: 60.0,
+            icon: const Icon(
+              Icons.arrow_back_rounded,
+              color: Colors.white,
+              size: 30.0,
             ),
-          ],
-          centerTitle: false,
-          elevation: 0.0,
+            onPressed: () async {
+              context.pop();
+            },
+          ),
+          title: Text(
+            FFLocalizations.of(context).getText(
+              '8bbey2lz' /* Perfil de Administración */,
+            ),
+            style: FlutterFlowTheme.of(context).headlineMedium.override(
+                  fontFamily: 'Inter',
+                  color: Colors.white,
+                  fontSize: 22.0,
+                  letterSpacing: 0.0,
+                ),
+          ),
+          actions: const [],
+          centerTitle: true,
+          elevation: 2.0,
         ),
         body: SafeArea(
           top: true,
@@ -322,80 +309,6 @@ class _PerfilAdminWidgetState extends State<PerfilAdminWidget>
                 color: FlutterFlowTheme.of(context).alternate,
               ).animateOnPageLoad(animationsMap['dividerOnPageLoadAnimation']!),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                child: Container(
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).secondaryBackground,
-                    borderRadius: BorderRadius.circular(12.0),
-                    border: Border.all(
-                      color: FlutterFlowTheme.of(context).alternate,
-                      width: 2.0,
-                    ),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(2.0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              12.0, 0.0, 0.0, 0.0),
-                          child: Icon(
-                            Icons.power_settings_new_rounded,
-                            color: FlutterFlowTheme.of(context).primaryText,
-                            size: 24.0,
-                          ),
-                        ),
-                        if (valueOrDefault<bool>(
-                            currentUserDocument?.esAdmin, false))
-                          Expanded(
-                            child: AuthUserStreamWidget(
-                              builder: (context) => SwitchListTile.adaptive(
-                                value: _model.switchListTileValue ??= true,
-                                onChanged: (newValue) async {
-                                  setState(() =>
-                                      _model.switchListTileValue = newValue);
-                                  if (newValue) {
-                                    if (valueOrDefault<bool>(
-                                        currentUserDocument?.esAdmin, false)) {
-                                      context.pushNamed('PerfilAdmin');
-                                    } else {
-                                      context.pushNamed('PerfilUsuario');
-                                    }
-                                  }
-                                },
-                                title: Text(
-                                  FFLocalizations.of(context).getText(
-                                    '7fnt7kbp' /* Active */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Readex Pro',
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                                tileColor: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                activeColor:
-                                    FlutterFlowTheme.of(context).secondary,
-                                activeTrackColor: const Color(0x3439D2C0),
-                                dense: false,
-                                controlAffinity:
-                                    ListTileControlAffinity.trailing,
-                                contentPadding: const EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 0.0, 4.0, 0.0),
-                              ),
-                            ),
-                          ),
-                      ],
-                    ),
-                  ),
-                ).animateOnPageLoad(
-                    animationsMap['containerOnPageLoadAnimation1']!),
-              ),
-              Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
                 child: InkWell(
                   splashColor: Colors.transparent,
@@ -408,7 +321,7 @@ class _PerfilAdminWidgetState extends State<PerfilAdminWidget>
                   child: Container(
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                      color: const Color(0xA216B070),
                       borderRadius: BorderRadius.circular(12.0),
                       border: Border.all(
                         color: FlutterFlowTheme.of(context).alternate,
@@ -450,7 +363,7 @@ class _PerfilAdminWidgetState extends State<PerfilAdminWidget>
                     ),
                   ),
                 ).animateOnPageLoad(
-                    animationsMap['containerOnPageLoadAnimation2']!),
+                    animationsMap['containerOnPageLoadAnimation1']!),
               ),
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
@@ -479,7 +392,7 @@ class _PerfilAdminWidgetState extends State<PerfilAdminWidget>
                   child: Container(
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                      color: FlutterFlowTheme.of(context).tertiary,
                       borderRadius: BorderRadius.circular(12.0),
                       border: Border.all(
                         color: FlutterFlowTheme.of(context).alternate,
@@ -521,55 +434,64 @@ class _PerfilAdminWidgetState extends State<PerfilAdminWidget>
                     ),
                   ),
                 ).animateOnPageLoad(
-                    animationsMap['containerOnPageLoadAnimation3']!),
+                    animationsMap['containerOnPageLoadAnimation2']!),
               ),
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
-                child: Container(
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).secondaryBackground,
-                    borderRadius: BorderRadius.circular(12.0),
-                    border: Border.all(
-                      color: FlutterFlowTheme.of(context).alternate,
-                      width: 2.0,
+                child: InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () async {
+                    context.pushNamed('MenuAministracion');
+                  },
+                  child: Container(
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).secondary,
+                      borderRadius: BorderRadius.circular(12.0),
+                      border: Border.all(
+                        color: FlutterFlowTheme.of(context).alternate,
+                        width: 2.0,
+                      ),
                     ),
-                  ),
-                  child: Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(8.0, 12.0, 8.0, 12.0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              8.0, 0.0, 0.0, 0.0),
-                          child: Icon(
-                            Icons.settings_outlined,
-                            color: FlutterFlowTheme.of(context).primaryText,
-                            size: 24.0,
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              12.0, 0.0, 0.0, 0.0),
-                          child: Text(
-                            FFLocalizations.of(context).getText(
-                              'gamjts0z' /* Configuracion de la cuenta */,
+                    child: Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(8.0, 12.0, 8.0, 12.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                8.0, 0.0, 0.0, 0.0),
+                            child: Icon(
+                              Icons.settings_outlined,
+                              color: FlutterFlowTheme.of(context).primaryText,
+                              size: 24.0,
                             ),
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Readex Pro',
-                                  letterSpacing: 0.0,
-                                ),
                           ),
-                        ),
-                      ],
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                12.0, 0.0, 0.0, 0.0),
+                            child: Text(
+                              FFLocalizations.of(context).getText(
+                                'gamjts0z' /* Panel de Administacion */,
+                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Readex Pro',
+                                    letterSpacing: 0.0,
+                                  ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ).animateOnPageLoad(
-                    animationsMap['containerOnPageLoadAnimation4']!),
+                    animationsMap['containerOnPageLoadAnimation3']!),
               ),
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),

@@ -47,16 +47,16 @@ class _AdministrarUsuariosWidgetState extends State<AdministrarUsuariosWidget>
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+          backgroundColor: FlutterFlowTheme.of(context).primary,
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_rounded,
-              color: FlutterFlowTheme.of(context).primaryText,
+              color: Colors.white,
               size: 30.0,
             ),
             onPressed: () async {
@@ -65,16 +65,17 @@ class _AdministrarUsuariosWidgetState extends State<AdministrarUsuariosWidget>
           ),
           title: Text(
             FFLocalizations.of(context).getText(
-              'lrng6657' /* Buscar Usuarios */,
+              '7zg1c4qw' /* Gestionar Usuarios */,
             ),
             style: FlutterFlowTheme.of(context).headlineSmall.override(
                   fontFamily: 'Inter',
+                  color: FlutterFlowTheme.of(context).secondaryBackground,
                   letterSpacing: 0.0,
                 ),
           ),
           actions: const [],
-          centerTitle: false,
-          elevation: 0.0,
+          centerTitle: true,
+          elevation: 2.0,
         ),
         body: SafeArea(
           top: true,
@@ -328,40 +329,26 @@ class _AdministrarUsuariosWidgetState extends State<AdministrarUsuariosWidget>
                                                       padding:
                                                           const EdgeInsetsDirectional
                                                               .fromSTEB(
+                                                                  12.0,
                                                                   0.0,
-                                                                  4.0,
                                                                   0.0,
                                                                   0.0),
-                                                      child: Row(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        children: [
-                                                          Padding(
-                                                            padding:
-                                                                const EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        4.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            child: Text(
-                                                              listViewUsersRecord
-                                                                  .email,
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Readex Pro',
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primary,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                  ),
-                                                            ),
-                                                          ),
-                                                        ],
+                                                      child: Text(
+                                                        listViewUsersRecord
+                                                            .email,
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyLarge
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Readex Pro',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primary,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                       ),
                                                     ),
                                                     Padding(
@@ -409,7 +396,7 @@ class _AdministrarUsuariosWidgetState extends State<AdministrarUsuariosWidget>
                                                     Clip.antiAliasWithSaveLayer,
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .primaryBackground,
+                                                        .primary,
                                                 elevation: 1.0,
                                                 shape: RoundedRectangleBorder(
                                                   borderRadius:
@@ -423,7 +410,7 @@ class _AdministrarUsuariosWidgetState extends State<AdministrarUsuariosWidget>
                                                         .keyboard_arrow_right_rounded,
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .secondaryText,
+                                                        .secondaryBackground,
                                                     size: 24.0,
                                                   ),
                                                 ),

@@ -142,6 +142,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.Document,
             ),
           ),
+        ),
+        FFRoute(
+          name: 'pass55',
+          path: '/pass55',
+          builder: (context, params) => const Pass55Widget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -329,7 +334,7 @@ class FFRoute {
               ? Container(
                   color: Colors.transparent,
                   child: Image.asset(
-                    'assets/images/verde.jpg',
+                    'assets/images/image.png',
                     fit: BoxFit.cover,
                   ),
                 )

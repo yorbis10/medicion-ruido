@@ -213,13 +213,15 @@ class _PaginaInicioWidgetState extends State<PaginaInicioWidget>
                               0.0, 44.0, 0.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
-                              'fcf8sww7' /* Monitoreo y Alerta de Contamin... */,
+                              'w8wi580t' /* MACA */,
                             ),
                             textAlign: TextAlign.center,
                             style: FlutterFlowTheme.of(context)
                                 .displaySmall
                                 .override(
                                   fontFamily: 'Inter',
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  fontSize: 50.0,
                                   letterSpacing: 0.0,
                                 ),
                           ).animateOnPageLoad(
@@ -230,13 +232,14 @@ class _PaginaInicioWidgetState extends State<PaginaInicioWidget>
                               44.0, 8.0, 44.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
-                              '70bb80nr' /* ¡Gracias por unirte! ¡Acceda o... */,
+                              '70bb80nr' /* Monitoreo y Alerta de Contamin... */,
                             ),
                             textAlign: TextAlign.center,
                             style: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
                                   fontFamily: 'Readex Pro',
+                                  fontSize: 20.0,
                                   letterSpacing: 0.0,
                                 ),
                           ).animateOnPageLoad(

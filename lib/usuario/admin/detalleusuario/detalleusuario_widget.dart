@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/usuario/admin/eliminar_usuario/eliminar_usuario_widget.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -37,27 +38,7 @@ class _DetalleusuarioWidgetState extends State<DetalleusuarioWidget>
     _model = createModel(context, () => DetalleusuarioModel());
 
     animationsMap.addAll({
-      'containerOnPageLoadAnimation1': AnimationInfo(
-        trigger: AnimationTrigger.onPageLoad,
-        effectsBuilder: () => [
-          VisibilityEffect(duration: 1.ms),
-          FadeEffect(
-            curve: Curves.easeInOut,
-            delay: 0.0.ms,
-            duration: 600.0.ms,
-            begin: 0.0,
-            end: 1.0,
-          ),
-          MoveEffect(
-            curve: Curves.easeInOut,
-            delay: 0.0.ms,
-            duration: 600.0.ms,
-            begin: const Offset(0.0, 60.0),
-            end: const Offset(0.0, 0.0),
-          ),
-        ],
-      ),
-      'containerOnPageLoadAnimation2': AnimationInfo(
+      'containerOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           VisibilityEffect(duration: 1.ms),
@@ -155,56 +136,19 @@ class _DetalleusuarioWidgetState extends State<DetalleusuarioWidget>
                                     borderRadius: BorderRadius.circular(12.0),
                                   ),
                                   child: FlutterFlowIconButton(
-                                    borderColor: Colors.transparent,
+                                    borderColor: const Color(0x00FFFFFF),
                                     borderRadius: 8.0,
                                     borderWidth: 1.0,
                                     buttonSize: 40.0,
-                                    fillColor: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    icon: Icon(
+                                    fillColor:
+                                        FlutterFlowTheme.of(context).primary,
+                                    icon: const Icon(
                                       Icons.arrow_back_rounded,
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
+                                      color: Colors.white,
                                       size: 20.0,
                                     ),
                                     onPressed: () async {
                                       context.pop();
-                                    },
-                                  ),
-                                ),
-                                Container(
-                                  width: 40.0,
-                                  height: 40.0,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    boxShadow: const [
-                                      BoxShadow(
-                                        blurRadius: 4.0,
-                                        color: Color(0x520E151B),
-                                        offset: Offset(
-                                          0.0,
-                                          2.0,
-                                        ),
-                                      )
-                                    ],
-                                    borderRadius: BorderRadius.circular(12.0),
-                                  ),
-                                  child: FlutterFlowIconButton(
-                                    borderColor: Colors.transparent,
-                                    borderRadius: 8.0,
-                                    borderWidth: 1.0,
-                                    buttonSize: 40.0,
-                                    fillColor: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    icon: Icon(
-                                      Icons.ios_share,
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
-                                      size: 20.0,
-                                    ),
-                                    onPressed: () {
-                                      print('IconButton pressed ...');
                                     },
                                   ),
                                 ),
@@ -257,15 +201,6 @@ class _DetalleusuarioWidgetState extends State<DetalleusuarioWidget>
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
                                       children: [
-                                        const Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 8.0, 0.0, 0.0),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [],
-                                          ),
-                                        ),
                                         Padding(
                                           padding:
                                               const EdgeInsetsDirectional.fromSTEB(
@@ -306,6 +241,13 @@ class _DetalleusuarioWidgetState extends State<DetalleusuarioWidget>
                 ],
               ),
             ),
+            Container(
+              width: 100.0,
+              height: 32.0,
+              decoration: BoxDecoration(
+                color: FlutterFlowTheme.of(context).secondaryBackground,
+              ),
+            ),
             Align(
               alignment: const AlignmentDirectional(-1.0, 0.0),
               child: Column(
@@ -332,94 +274,45 @@ class _DetalleusuarioWidgetState extends State<DetalleusuarioWidget>
                       ),
                     ),
                   ),
-                  Align(
-                    alignment: const AlignmentDirectional(-1.0, 0.0),
-                    child: Text(
-                      valueOrDefault<String>(
-                        widget.detalleUsuario?.phoneNumber,
-                        'Sin Telefono',
-                      ),
-                      style: FlutterFlowTheme.of(context).titleSmall.override(
-                            fontFamily: 'Readex Pro',
-                            color: Colors.black,
-                            fontSize: 30.0,
-                            letterSpacing: 0.0,
-                          ),
-                    ),
+                  Divider(
+                    thickness: 1.0,
+                    color: FlutterFlowTheme.of(context).accent4,
                   ),
                 ],
               ),
             ),
-            Container(
-              width: 100.0,
-              height: 32.0,
-              decoration: BoxDecoration(
-                color: FlutterFlowTheme.of(context).secondaryBackground,
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-              child: Container(
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
-                  borderRadius: BorderRadius.circular(12.0),
-                  border: Border.all(
-                    color: FlutterFlowTheme.of(context).alternate,
-                    width: 2.0,
-                  ),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(2.0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
-                        child: Icon(
-                          Icons.power_settings_new_rounded,
-                          color: FlutterFlowTheme.of(context).primaryText,
-                          size: 24.0,
+            Align(
+              alignment: const AlignmentDirectional(-1.0, 0.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Align(
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                    child: Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
+                      child: Text(
+                        valueOrDefault<String>(
+                          widget.detalleUsuario?.phoneNumber,
+                          '3113673412',
                         ),
-                      ),
-                      if (valueOrDefault<bool>(
-                          currentUserDocument?.esAdmin, false))
-                        Expanded(
-                          child: AuthUserStreamWidget(
-                            builder: (context) => SwitchListTile.adaptive(
-                              value: _model.switchListTileValue1 ??= true,
-                              onChanged: (newValue) async {
-                                setState(() =>
-                                    _model.switchListTileValue1 = newValue);
-                              },
-                              title: Text(
-                                FFLocalizations.of(context).getText(
-                                  'csgzi2eo' /* Activo */,
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Readex Pro',
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                              tileColor: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              activeColor: FlutterFlowTheme.of(context).primary,
-                              activeTrackColor: const Color(0x3439D2C0),
-                              dense: false,
-                              controlAffinity: ListTileControlAffinity.trailing,
-                              contentPadding: const EdgeInsetsDirectional.fromSTEB(
-                                  12.0, 0.0, 4.0, 0.0),
+                        style: FlutterFlowTheme.of(context).titleSmall.override(
+                              fontFamily: 'Readex Pro',
+                              color: Colors.black,
+                              fontSize: 25.0,
+                              letterSpacing: 0.0,
                             ),
-                          ),
-                        ),
-                    ],
+                      ),
+                    ),
                   ),
-                ),
-              ).animateOnPageLoad(
-                  animationsMap['containerOnPageLoadAnimation1']!),
+                  Divider(
+                    thickness: 1.0,
+                    color: FlutterFlowTheme.of(context).accent4,
+                  ),
+                ],
+              ),
             ),
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
@@ -452,14 +345,14 @@ class _DetalleusuarioWidgetState extends State<DetalleusuarioWidget>
                         Expanded(
                           child: AuthUserStreamWidget(
                             builder: (context) => SwitchListTile.adaptive(
-                              value: _model.switchListTileValue2 ??= false,
+                              value: _model.switchListTileValue ??= false,
                               onChanged: (newValue) async {
                                 setState(() =>
-                                    _model.switchListTileValue2 = newValue);
+                                    _model.switchListTileValue = newValue);
                               },
                               title: Text(
                                 FFLocalizations.of(context).getText(
-                                  'oq63vs4h' /* Administrador */,
+                                  'oq63vs4h' /* Es Administrador */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
@@ -483,7 +376,7 @@ class _DetalleusuarioWidgetState extends State<DetalleusuarioWidget>
                   ),
                 ),
               ).animateOnPageLoad(
-                  animationsMap['containerOnPageLoadAnimation2']!),
+                  animationsMap['containerOnPageLoadAnimation']!),
             ),
             Container(
               width: 316.0,
@@ -493,8 +386,22 @@ class _DetalleusuarioWidgetState extends State<DetalleusuarioWidget>
               ),
             ),
             FFButtonWidget(
-              onPressed: () {
-                print('Button pressed ...');
+              onPressed: () async {
+                await showModalBottomSheet(
+                  isScrollControlled: true,
+                  backgroundColor: Colors.transparent,
+                  enableDrag: false,
+                  context: context,
+                  builder: (context) {
+                    return GestureDetector(
+                      onTap: () => FocusScope.of(context).unfocus(),
+                      child: Padding(
+                        padding: MediaQuery.viewInsetsOf(context),
+                        child: const EliminarUsuarioWidget(),
+                      ),
+                    );
+                  },
+                ).then((value) => safeSetState(() {}));
               },
               text: FFLocalizations.of(context).getText(
                 '1swir9bp' /* Eliminar */,
@@ -503,7 +410,7 @@ class _DetalleusuarioWidgetState extends State<DetalleusuarioWidget>
                 height: 68.0,
                 padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                 iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                color: const Color(0xFF942F30),
+                color: FlutterFlowTheme.of(context).error,
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                       fontFamily: 'Readex Pro',
                       color: Colors.white,

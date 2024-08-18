@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
+import '/custom_code/actions/index.dart' as actions;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'cambiar_clave_model.dart';
@@ -36,8 +37,8 @@ class _CambiarClaveWidgetState extends State<CambiarClaveWidget> {
     _model.nuevaClaveTextController ??= TextEditingController();
     _model.nuevaClaveFocusNode ??= FocusNode();
 
-    _model.textController3 ??= TextEditingController();
-    _model.textFieldFocusNode ??= FocusNode();
+    _model.confirmaClaveTextController ??= TextEditingController();
+    _model.confirmaClaveFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -357,8 +358,8 @@ class _CambiarClaveWidgetState extends State<CambiarClaveWidget> {
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 8.0, 0.0),
                               child: TextFormField(
-                                controller: _model.textController3,
-                                focusNode: _model.textFieldFocusNode,
+                                controller: _model.confirmaClaveTextController,
+                                focusNode: _model.confirmaClaveFocusNode,
                                 autofocus: true,
                                 obscureText: false,
                                 decoration: InputDecoration(
@@ -415,7 +416,8 @@ class _CambiarClaveWidgetState extends State<CambiarClaveWidget> {
                                       fontFamily: 'Readex Pro',
                                       letterSpacing: 0.0,
                                     ),
-                                validator: _model.textController3Validator
+                                validator: _model
+                                    .confirmaClaveTextControllerValidator
                                     .asValidator(context),
                               ),
                             ),
@@ -427,8 +429,73 @@ class _CambiarClaveWidgetState extends State<CambiarClaveWidget> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   FFButtonWidget(
-                                    onPressed: () {
-                                      print('Button pressed ...');
+                                    onPressed: () async {
+                                      Function() navigate = () {};
+                                      _model.isChange =
+                                          await actions.changePassword(
+                                        context,
+                                        _model.claveActualTextController.text,
+                                        _model.nuevaClaveTextController.text,
+                                      );
+                                      if (_model.isChange!) {
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(
+                                          SnackBar(
+                                            content: Text(
+                                              'Clave actualizada, Ingrese nuevamente',
+                                              style: TextStyle(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                              ),
+                                            ),
+                                            duration:
+                                                const Duration(milliseconds: 4000),
+                                            backgroundColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .secondary,
+                                          ),
+                                        );
+                                        GoRouter.of(context).prepareAuthEvent();
+                                        await authManager.signOut();
+                                        GoRouter.of(context)
+                                            .clearRedirectLocation();
+
+                                        navigate = () => context.goNamedAuth(
+                                            'PaginaInicio', context.mounted);
+                                      } else {
+                                        await showDialog(
+                                          context: context,
+                                          builder: (alertDialogContext) {
+                                            return AlertDialog(
+                                              title:
+                                                  const Text('Contraseña incorrecta'),
+                                              content: const Text(
+                                                  'la contraseña ingresada es incorreota o está vacia'),
+                                              actions: [
+                                                TextButton(
+                                                  onPressed: () =>
+                                                      Navigator.pop(
+                                                          alertDialogContext),
+                                                  child: const Text('Ok'),
+                                                ),
+                                              ],
+                                            );
+                                          },
+                                        );
+                                        setState(() {
+                                          _model.claveActualTextController
+                                              ?.clear();
+                                          _model.nuevaClaveTextController
+                                              ?.clear();
+                                          _model.confirmaClaveTextController
+                                              ?.clear();
+                                        });
+                                      }
+
+                                      navigate();
+
+                                      setState(() {});
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       'l9varrp3' /* Cambiar la contraseña */,

@@ -114,7 +114,12 @@ class _Dash1WidgetState extends State<Dash1Widget>
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.pushNamed('PerfilAdmin');
+                              if (valueOrDefault<bool>(
+                                  currentUserDocument?.esAdmin, false)) {
+                                context.pushNamed('PerfilAdmin');
+                              } else {
+                                context.pushNamed('PerfilUsuario');
+                              }
                             },
                             child: Container(
                               width: 44.0,
@@ -198,20 +203,27 @@ class _Dash1WidgetState extends State<Dash1Widget>
                               ),
                             ),
                           ),
-                          FlutterFlowIconButton(
-                            borderColor: Colors.transparent,
-                            borderRadius: 30.0,
-                            borderWidth: 1.0,
-                            buttonSize: 60.0,
-                            icon: Icon(
-                              Icons.add_circle_outline_rounded,
-                              color: FlutterFlowTheme.of(context).secondaryText,
-                              size: 30.0,
+                          if (valueOrDefault<bool>(
+                              currentUserDocument?.esAdmin, false))
+                            AuthUserStreamWidget(
+                              builder: (context) => FlutterFlowIconButton(
+                                borderColor: Colors.transparent,
+                                borderRadius: 30.0,
+                                borderWidth: 1.0,
+                                buttonSize: 60.0,
+                                icon: Icon(
+                                  Icons.menu,
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  size: 30.0,
+                                ),
+                                onPressed: () async {
+                                  if (valueOrDefault<bool>(
+                                      currentUserDocument?.esAdmin, false)) {
+                                    context.pushNamed('MenuAministracion');
+                                  }
+                                },
+                              ),
                             ),
-                            onPressed: () {
-                              print('IconButton pressed ...');
-                            },
-                          ),
                         ],
                       ),
                     ),

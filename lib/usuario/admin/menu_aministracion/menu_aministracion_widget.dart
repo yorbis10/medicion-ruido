@@ -44,25 +44,36 @@ class _MenuAministracionWidgetState extends State<MenuAministracionWidget>
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryText,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primaryText,
+          backgroundColor: FlutterFlowTheme.of(context).primary,
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_rounded,
-              color: FlutterFlowTheme.of(context).secondaryBackground,
+              color: Colors.white,
               size: 30.0,
             ),
             onPressed: () async {
               context.pop();
             },
           ),
+          title: Text(
+            FFLocalizations.of(context).getText(
+              'yxabhsv4' /* Panel de Administración */,
+            ),
+            style: FlutterFlowTheme.of(context).headlineMedium.override(
+                  fontFamily: 'Inter',
+                  color: Colors.white,
+                  fontSize: 22.0,
+                  letterSpacing: 0.0,
+                ),
+          ),
           actions: const [],
-          centerTitle: false,
-          elevation: 0.0,
+          centerTitle: true,
+          elevation: 2.0,
         ),
         body: Align(
           alignment: const AlignmentDirectional(0.0, 0.0),
@@ -295,6 +306,7 @@ class _MenuAministracionWidgetState extends State<MenuAministracionWidget>
                                                           .displaySmall
                                                           .override(
                                                             fontFamily: 'Inter',
+                                                            fontSize: 25.0,
                                                             letterSpacing: 0.0,
                                                           ),
                                                     ),
@@ -356,6 +368,7 @@ class _MenuAministracionWidgetState extends State<MenuAministracionWidget>
                                                           .displaySmall
                                                           .override(
                                                             fontFamily: 'Inter',
+                                                            fontSize: 25.0,
                                                             letterSpacing: 0.0,
                                                           ),
                                                     ),
