@@ -89,6 +89,26 @@ class _RecuperarClaveWidgetState extends State<RecuperarClaveWidget> {
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Divider(
+                thickness: 1.0,
+                color: FlutterFlowTheme.of(context).accent4,
+              ),
+              Divider(
+                thickness: 1.0,
+                color: FlutterFlowTheme.of(context).accent4,
+              ),
+              Divider(
+                thickness: 1.0,
+                color: FlutterFlowTheme.of(context).accent4,
+              ),
+              Divider(
+                thickness: 1.0,
+                color: FlutterFlowTheme.of(context).accent4,
+              ),
+              Divider(
+                thickness: 1.0,
+                color: FlutterFlowTheme.of(context).accent4,
+              ),
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                 child: Text(
@@ -101,6 +121,10 @@ class _RecuperarClaveWidgetState extends State<RecuperarClaveWidget> {
                       ),
                 ),
               ),
+              Divider(
+                thickness: 1.0,
+                color: FlutterFlowTheme.of(context).accent4,
+              ),
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
                 child: Text(
@@ -112,6 +136,10 @@ class _RecuperarClaveWidgetState extends State<RecuperarClaveWidget> {
                         letterSpacing: 0.0,
                       ),
                 ),
+              ),
+              Divider(
+                thickness: 1.0,
+                color: FlutterFlowTheme.of(context).accent4,
               ),
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
@@ -207,6 +235,21 @@ class _RecuperarClaveWidgetState extends State<RecuperarClaveWidget> {
                         email: _model.correoTextController.text,
                         context: context,
                       );
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text(
+                            'Se ha enviado un correo a tu buzon para realizar la recuperecion de la contraseña',
+                            style: TextStyle(
+                              color: FlutterFlowTheme.of(context).primaryText,
+                            ),
+                          ),
+                          duration: const Duration(milliseconds: 4000),
+                          backgroundColor:
+                              FlutterFlowTheme.of(context).secondary,
+                        ),
+                      );
+
+                      context.pushNamed('login');
                     },
                     text: FFLocalizations.of(context).getText(
                       '4cx6gnlh' /* Recuperar */,

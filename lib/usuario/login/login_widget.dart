@@ -81,7 +81,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                           alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                32.0, 0.0, 0.0, 0.0),
+                                32.0, 0.0, 32.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
                                 'fcf8sww7' /* MACA */,
@@ -92,6 +92,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   .override(
                                     fontFamily: 'Inter',
                                     color: FlutterFlowTheme.of(context).primary,
+                                    fontSize: 50.0,
                                     letterSpacing: 0.0,
                                   ),
                             ),

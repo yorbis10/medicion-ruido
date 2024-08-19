@@ -262,6 +262,11 @@ class _MenuAministracionWidgetState extends State<MenuAministracionWidget>
                                                 .primaryBackground,
                                             borderRadius:
                                                 BorderRadius.circular(24.0),
+                                            border: Border.all(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                            ),
                                           ),
                                           child: Padding(
                                             padding: const EdgeInsets.all(12.0),
@@ -285,7 +290,7 @@ class _MenuAministracionWidgetState extends State<MenuAministracionWidget>
                                                         .manage_accounts_outlined,
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .primaryText,
+                                                        .primary,
                                                     size: 44.0,
                                                   ),
                                                   Padding(
@@ -326,6 +331,11 @@ class _MenuAministracionWidgetState extends State<MenuAministracionWidget>
                                                 .primaryBackground,
                                             borderRadius:
                                                 BorderRadius.circular(24.0),
+                                            border: Border.all(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                            ),
                                           ),
                                           child: Padding(
                                             padding: const EdgeInsets.all(12.0),
@@ -344,10 +354,10 @@ class _MenuAministracionWidgetState extends State<MenuAministracionWidget>
                                                     MainAxisAlignment.center,
                                                 children: [
                                                   Icon(
-                                                    Icons.dashboard_sharp,
+                                                    Icons.dashboard_outlined,
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .primaryText,
+                                                        .primary,
                                                     size: 44.0,
                                                   ),
                                                   Padding(
@@ -388,6 +398,11 @@ class _MenuAministracionWidgetState extends State<MenuAministracionWidget>
                                                 .primaryBackground,
                                             borderRadius:
                                                 BorderRadius.circular(24.0),
+                                            border: Border.all(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                            ),
                                           ),
                                           child: Padding(
                                             padding: const EdgeInsets.all(12.0),
@@ -398,10 +413,10 @@ class _MenuAministracionWidgetState extends State<MenuAministracionWidget>
                                               children: [
                                                 Icon(
                                                   Icons
-                                                      .supervisor_account_rounded,
+                                                      .admin_panel_settings_outlined,
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .primaryText,
+                                                      .primary,
                                                   size: 44.0,
                                                 ),
                                                 Padding(
@@ -452,6 +467,11 @@ class _MenuAministracionWidgetState extends State<MenuAministracionWidget>
                                                 .primaryBackground,
                                             borderRadius:
                                                 BorderRadius.circular(24.0),
+                                            border: Border.all(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                            ),
                                           ),
                                           child: Padding(
                                             padding: const EdgeInsets.all(12.0),
@@ -461,11 +481,10 @@ class _MenuAministracionWidgetState extends State<MenuAministracionWidget>
                                                   MainAxisAlignment.center,
                                               children: [
                                                 Icon(
-                                                  Icons
-                                                      .supervisor_account_rounded,
+                                                  Icons.surround_sound_outlined,
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .primaryText,
+                                                      .primary,
                                                   size: 44.0,
                                                 ),
                                                 Padding(

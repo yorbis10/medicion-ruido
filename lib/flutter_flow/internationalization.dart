@@ -397,16 +397,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // AdministrarUsuarios
   {
-    'wn8g8ms0': {
-      'es': 'Buscar...',
-      'en': '',
-    },
     'a6yzujlr': {
-      'es': 'Conincidencia de busqueda',
+      'es': 'Selecciona el usuario',
       'en': '',
     },
     '08qyz6hf': {
-      'es': '24',
+      'es': '↓↓↓↓↓',
       'en': '',
     },
     '7zg1c4qw': {

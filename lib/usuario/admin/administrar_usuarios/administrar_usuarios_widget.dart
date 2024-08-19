@@ -26,9 +26,6 @@ class _AdministrarUsuariosWidgetState extends State<AdministrarUsuariosWidget>
     super.initState();
     _model = createModel(context, () => AdministrarUsuariosModel());
 
-    _model.textController ??= TextEditingController();
-    _model.textFieldFocusNode ??= FocusNode();
-
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -83,66 +80,6 @@ class _AdministrarUsuariosWidgetState extends State<AdministrarUsuariosWidget>
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 0.0),
-                child: TextFormField(
-                  controller: _model.textController,
-                  focusNode: _model.textFieldFocusNode,
-                  obscureText: false,
-                  decoration: InputDecoration(
-                    isDense: false,
-                    labelText: FFLocalizations.of(context).getText(
-                      'wn8g8ms0' /* Buscar... */,
-                    ),
-                    labelStyle:
-                        FlutterFlowTheme.of(context).labelMedium.override(
-                              fontFamily: 'Readex Pro',
-                              letterSpacing: 0.0,
-                            ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).primaryBackground,
-                        width: 2.0,
-                      ),
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).primary,
-                        width: 2.0,
-                      ),
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                    errorBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).error,
-                        width: 2.0,
-                      ),
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                    focusedErrorBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).error,
-                        width: 2.0,
-                      ),
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                    filled: true,
-                    fillColor: FlutterFlowTheme.of(context).primaryBackground,
-                    prefixIcon: Icon(
-                      Icons.search_outlined,
-                      color: FlutterFlowTheme.of(context).secondaryText,
-                    ),
-                  ),
-                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Readex Pro',
-                        letterSpacing: 0.0,
-                      ),
-                  maxLines: null,
-                  validator:
-                      _model.textControllerValidator.asValidator(context),
-                ),
-              ),
               Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -152,7 +89,7 @@ class _AdministrarUsuariosWidgetState extends State<AdministrarUsuariosWidget>
                         const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        'a6yzujlr' /* Conincidencia de busqueda */,
+                        'a6yzujlr' /* Selecciona el usuario */,
                       ),
                       style: FlutterFlowTheme.of(context).labelMedium.override(
                             fontFamily: 'Readex Pro',
@@ -165,7 +102,7 @@ class _AdministrarUsuariosWidgetState extends State<AdministrarUsuariosWidget>
                         const EdgeInsetsDirectional.fromSTEB(4.0, 12.0, 16.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        '08qyz6hf' /* 24 */,
+                        '08qyz6hf' /* ↓↓↓↓↓ */,
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Readex Pro',
@@ -174,6 +111,10 @@ class _AdministrarUsuariosWidgetState extends State<AdministrarUsuariosWidget>
                     ),
                   ),
                 ],
+              ),
+              const Divider(
+                thickness: 1.0,
+                color: Color(0x00FFFFFF),
               ),
               Expanded(
                 child: Padding(
@@ -209,6 +150,7 @@ class _AdministrarUsuariosWidgetState extends State<AdministrarUsuariosWidget>
                               listViewUsersRecordList[listViewIndex];
                           return ListView(
                             padding: EdgeInsets.zero,
+                            primary: false,
                             shrinkWrap: true,
                             scrollDirection: Axis.vertical,
                             children: [
@@ -254,6 +196,11 @@ class _AdministrarUsuariosWidgetState extends State<AdministrarUsuariosWidget>
                                             ),
                                           )
                                         ],
+                                        shape: BoxShape.rectangle,
+                                        border: Border.all(
+                                          color: FlutterFlowTheme.of(context)
+                                              .accent4,
+                                        ),
                                       ),
                                       child: Padding(
                                         padding: const EdgeInsets.all(8.0),

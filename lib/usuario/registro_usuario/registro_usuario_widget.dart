@@ -96,7 +96,7 @@ class _RegistroUsuarioWidgetState extends State<RegistroUsuarioWidget> {
                               alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
-                                    32.0, 0.0, 0.0, 0.0),
+                                    32.0, 0.0, 32.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
                                     'w531dvea' /* MACA */,
@@ -108,6 +108,7 @@ class _RegistroUsuarioWidgetState extends State<RegistroUsuarioWidget> {
                                         fontFamily: 'Inter',
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
+                                        fontSize: 50.0,
                                         letterSpacing: 0.0,
                                       ),
                                 ),

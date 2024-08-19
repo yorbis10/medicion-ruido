@@ -519,7 +519,7 @@ class _PerfilAdminWidgetState extends State<PerfilAdminWidget>
                         ),
                     elevation: 0.0,
                     borderSide: BorderSide(
-                      color: FlutterFlowTheme.of(context).alternate,
+                      color: FlutterFlowTheme.of(context).primary,
                       width: 1.0,
                     ),
                     borderRadius: BorderRadius.circular(38.0),

@@ -322,7 +322,7 @@ class _DetalleusuarioWidgetState extends State<DetalleusuarioWidget>
                   color: FlutterFlowTheme.of(context).secondaryBackground,
                   borderRadius: BorderRadius.circular(12.0),
                   border: Border.all(
-                    color: FlutterFlowTheme.of(context).alternate,
+                    color: FlutterFlowTheme.of(context).primary,
                     width: 2.0,
                   ),
                 ),

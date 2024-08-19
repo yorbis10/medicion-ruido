@@ -534,7 +534,7 @@ class _PerfilUsuarioWidgetState extends State<PerfilUsuarioWidget>
                         ),
                     elevation: 0.0,
                     borderSide: BorderSide(
-                      color: FlutterFlowTheme.of(context).alternate,
+                      color: FlutterFlowTheme.of(context).primary,
                       width: 1.0,
                     ),
                     borderRadius: BorderRadius.circular(38.0),

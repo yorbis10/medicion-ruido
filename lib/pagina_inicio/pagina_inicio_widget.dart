@@ -48,26 +48,6 @@ class _PaginaInicioWidgetState extends State<PaginaInicioWidget>
           ),
         ],
       ),
-      'containerOnPageLoadAnimation2': AnimationInfo(
-        trigger: AnimationTrigger.onPageLoad,
-        effectsBuilder: () => [
-          VisibilityEffect(duration: 300.ms),
-          FadeEffect(
-            curve: Curves.easeInOut,
-            delay: 300.0.ms,
-            duration: 300.0.ms,
-            begin: 0.0,
-            end: 1.0,
-          ),
-          ScaleEffect(
-            curve: Curves.bounceOut,
-            delay: 300.0.ms,
-            duration: 300.0.ms,
-            begin: const Offset(0.6, 0.6),
-            end: const Offset(1.0, 1.0),
-          ),
-        ],
-      ),
       'textOnPageLoadAnimation1': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
@@ -85,6 +65,26 @@ class _PaginaInicioWidgetState extends State<PaginaInicioWidget>
             duration: 400.0.ms,
             begin: const Offset(0.0, 30.0),
             end: const Offset(0.0, 0.0),
+          ),
+        ],
+      ),
+      'containerOnPageLoadAnimation2': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          VisibilityEffect(duration: 300.ms),
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 300.0.ms,
+            duration: 300.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          ScaleEffect(
+            curve: Curves.bounceOut,
+            delay: 300.0.ms,
+            duration: 300.0.ms,
+            begin: const Offset(0.6, 0.6),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -187,6 +187,29 @@ class _PaginaInicioWidgetState extends State<PaginaInicioWidget>
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 44.0, 0.0, 0.0),
+                          child: Text(
+                            FFLocalizations.of(context).getText(
+                              'w8wi580t' /* MACA */,
+                            ),
+                            textAlign: TextAlign.center,
+                            style: FlutterFlowTheme.of(context)
+                                .displaySmall
+                                .override(
+                                  fontFamily: 'Inter',
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  fontSize: 50.0,
+                                  letterSpacing: 0.0,
+                                ),
+                          ).animateOnPageLoad(
+                              animationsMap['textOnPageLoadAnimation1']!),
+                        ),
+                        const Divider(
+                          thickness: 1.0,
+                          color: Color(0x00FFFFFF),
+                        ),
                         Opacity(
                           opacity: 0.7,
                           child: Container(
@@ -210,36 +233,16 @@ class _PaginaInicioWidgetState extends State<PaginaInicioWidget>
                         ),
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 44.0, 0.0, 0.0),
-                          child: Text(
-                            FFLocalizations.of(context).getText(
-                              'w8wi580t' /* MACA */,
-                            ),
-                            textAlign: TextAlign.center,
-                            style: FlutterFlowTheme.of(context)
-                                .displaySmall
-                                .override(
-                                  fontFamily: 'Inter',
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  fontSize: 50.0,
-                                  letterSpacing: 0.0,
-                                ),
-                          ).animateOnPageLoad(
-                              animationsMap['textOnPageLoadAnimation1']!),
-                        ),
-                        Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              44.0, 8.0, 44.0, 0.0),
+                              10.0, 8.0, 10.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
                               '70bb80nr' /* Monitoreo y Alerta de Contamin... */,
                             ),
                             textAlign: TextAlign.center,
                             style: FlutterFlowTheme.of(context)
-                                .labelMedium
+                                .displaySmall
                                 .override(
-                                  fontFamily: 'Readex Pro',
-                                  fontSize: 20.0,
+                                  fontFamily: 'Inter',
                                   letterSpacing: 0.0,
                                 ),
                           ).animateOnPageLoad(
