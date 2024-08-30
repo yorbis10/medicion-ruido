@@ -71,68 +71,70 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const Dash1Widget() : const PaginaInicioWidget(),
+      errorBuilder: (context, state) => appStateNotifier.loggedIn
+          ? const RuidoEnVivoWidget()
+          : const PaginaInicioWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) =>
-              appStateNotifier.loggedIn ? const Dash1Widget() : const PaginaInicioWidget(),
+          builder: (context, _) => appStateNotifier.loggedIn
+              ? const RuidoEnVivoWidget()
+              : const PaginaInicioWidget(),
         ),
         FFRoute(
           name: 'RegistroUsuario',
-          path: '/registroUsuario',
+          path: '/Registro',
           builder: (context, params) => const RegistroUsuarioWidget(),
         ),
         FFRoute(
           name: 'login',
-          path: '/login',
+          path: '/Login',
           builder: (context, params) => const LoginWidget(),
         ),
         FFRoute(
           name: 'PaginaInicio',
-          path: '/paginaInicio',
+          path: '/Pagina-Inicio',
           builder: (context, params) => const PaginaInicioWidget(),
         ),
         FFRoute(
-          name: 'dash1',
-          path: '/dash1',
-          builder: (context, params) => const Dash1Widget(),
+          name: 'RuidoEnVivo',
+          path: '/Ruido-En-Vivo',
+          builder: (context, params) => const RuidoEnVivoWidget(),
         ),
         FFRoute(
           name: 'PerfilAdmin',
-          path: '/perfilAdmin2',
+          path: '/Perfil-Admin',
           builder: (context, params) => const PerfilAdminWidget(),
         ),
         FFRoute(
           name: 'EditarPerfil',
-          path: '/editarPerfil',
+          path: '/Editar-Perfil',
           builder: (context, params) => const EditarPerfilWidget(),
         ),
         FFRoute(
           name: 'RecuperarClave',
-          path: '/recuperarClave',
+          path: '/Recuperar-Clave',
           builder: (context, params) => const RecuperarClaveWidget(),
         ),
         FFRoute(
           name: 'PerfilUsuario',
-          path: '/perfilUsuario',
+          path: '/Perfil-Usuario',
           builder: (context, params) => const PerfilUsuarioWidget(),
         ),
         FFRoute(
           name: 'AdministrarUsuarios',
-          path: '/administrarUsuarios',
+          path: '/Administrar-Usuarios',
           builder: (context, params) => const AdministrarUsuariosWidget(),
         ),
         FFRoute(
           name: 'MenuAministracion',
-          path: '/menuAministracion',
+          path: '/Menu-Aministracion',
           builder: (context, params) => const MenuAministracionWidget(),
         ),
         FFRoute(
           name: 'Detalleusuario',
-          path: '/Detalleusuario',
+          path: '/Detalle-Usuario',
           asyncParams: {
             'detalleUsuario': getDoc(['users'], UsersRecord.fromSnapshot),
           },
@@ -142,11 +144,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.Document,
             ),
           ),
-        ),
-        FFRoute(
-          name: 'pass55',
-          path: '/pass55',
-          builder: (context, params) => const Pass55Widget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -317,7 +314,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/paginaInicio';
+            return '/Pagina-Inicio';
           }
           return null;
         },

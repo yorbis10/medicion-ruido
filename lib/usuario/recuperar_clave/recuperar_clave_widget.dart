@@ -89,25 +89,25 @@ class _RecuperarClaveWidgetState extends State<RecuperarClaveWidget> {
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Divider(
+              const Divider(
                 thickness: 1.0,
-                color: FlutterFlowTheme.of(context).accent4,
+                color: Color(0x00FFFFFF),
               ),
-              Divider(
+              const Divider(
                 thickness: 1.0,
-                color: FlutterFlowTheme.of(context).accent4,
+                color: Color(0x00FFFFFF),
               ),
-              Divider(
+              const Divider(
                 thickness: 1.0,
-                color: FlutterFlowTheme.of(context).accent4,
+                color: Color(0x00FFFFFF),
               ),
-              Divider(
+              const Divider(
                 thickness: 1.0,
-                color: FlutterFlowTheme.of(context).accent4,
+                color: Color(0x00FFFFFF),
               ),
-              Divider(
+              const Divider(
                 thickness: 1.0,
-                color: FlutterFlowTheme.of(context).accent4,
+                color: Color(0x00FFFFFF),
               ),
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
@@ -121,9 +121,9 @@ class _RecuperarClaveWidgetState extends State<RecuperarClaveWidget> {
                       ),
                 ),
               ),
-              Divider(
+              const Divider(
                 thickness: 1.0,
-                color: FlutterFlowTheme.of(context).accent4,
+                color: Color(0x00FFFFFF),
               ),
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
@@ -137,79 +137,84 @@ class _RecuperarClaveWidgetState extends State<RecuperarClaveWidget> {
                       ),
                 ),
               ),
-              Divider(
+              const Divider(
                 thickness: 1.0,
-                color: FlutterFlowTheme.of(context).accent4,
+                color: Color(0x00FFFFFF),
               ),
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
-                child: SizedBox(
-                  width: double.infinity,
-                  child: TextFormField(
-                    controller: _model.correoTextController,
-                    focusNode: _model.correoFocusNode,
-                    autofillHints: const [AutofillHints.email],
-                    obscureText: false,
-                    decoration: InputDecoration(
-                      labelText: FFLocalizations.of(context).getText(
-                        'ayuklw2h' /* Correo electronico ... */,
-                      ),
-                      labelStyle:
-                          FlutterFlowTheme.of(context).labelMedium.override(
-                                fontFamily: 'Readex Pro',
-                                letterSpacing: 0.0,
-                              ),
-                      hintText: FFLocalizations.of(context).getText(
-                        'hchqh82b' /* Ecribe tu correo ... */,
-                      ),
-                      hintStyle:
-                          FlutterFlowTheme.of(context).labelMedium.override(
-                                fontFamily: 'Readex Pro',
-                                letterSpacing: 0.0,
-                              ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).alternate,
-                          width: 2.0,
+              Form(
+                key: _model.formKey,
+                autovalidateMode: AutovalidateMode.disabled,
+                child: Padding(
+                  padding:
+                      const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                  child: SizedBox(
+                    width: double.infinity,
+                    child: TextFormField(
+                      controller: _model.correoTextController,
+                      focusNode: _model.correoFocusNode,
+                      autofillHints: const [AutofillHints.email],
+                      obscureText: false,
+                      decoration: InputDecoration(
+                        labelText: FFLocalizations.of(context).getText(
+                          'ayuklw2h' /* Correo electronico */,
                         ),
-                        borderRadius: BorderRadius.circular(12.0),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).primary,
-                          width: 2.0,
+                        labelStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                        hintText: FFLocalizations.of(context).getText(
+                          'hchqh82b' /* Escribe tu correo electronico.... */,
                         ),
-                        borderRadius: BorderRadius.circular(12.0),
-                      ),
-                      errorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).error,
-                          width: 2.0,
+                        hintStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).alternate,
+                            width: 2.0,
+                          ),
+                          borderRadius: BorderRadius.circular(12.0),
                         ),
-                        borderRadius: BorderRadius.circular(12.0),
-                      ),
-                      focusedErrorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).error,
-                          width: 2.0,
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).primary,
+                            width: 2.0,
+                          ),
+                          borderRadius: BorderRadius.circular(12.0),
                         ),
-                        borderRadius: BorderRadius.circular(12.0),
+                        errorBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).error,
+                            width: 2.0,
+                          ),
+                          borderRadius: BorderRadius.circular(12.0),
+                        ),
+                        focusedErrorBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).error,
+                            width: 2.0,
+                          ),
+                          borderRadius: BorderRadius.circular(12.0),
+                        ),
+                        filled: true,
+                        fillColor:
+                            FlutterFlowTheme.of(context).secondaryBackground,
+                        contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                            24.0, 24.0, 20.0, 24.0),
                       ),
-                      filled: true,
-                      fillColor:
-                          FlutterFlowTheme.of(context).secondaryBackground,
-                      contentPadding: const EdgeInsetsDirectional.fromSTEB(
-                          24.0, 24.0, 20.0, 24.0),
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Readex Pro',
+                            letterSpacing: 0.0,
+                          ),
+                      maxLines: null,
+                      keyboardType: TextInputType.emailAddress,
+                      cursorColor: FlutterFlowTheme.of(context).primary,
+                      validator: _model.correoTextControllerValidator
+                          .asValidator(context),
                     ),
-                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Readex Pro',
-                          letterSpacing: 0.0,
-                        ),
-                    maxLines: null,
-                    keyboardType: TextInputType.emailAddress,
-                    cursorColor: FlutterFlowTheme.of(context).primary,
-                    validator: _model.correoTextControllerValidator
-                        .asValidator(context),
                   ),
                 ),
               ),
@@ -219,6 +224,10 @@ class _RecuperarClaveWidgetState extends State<RecuperarClaveWidget> {
                   padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                   child: FFButtonWidget(
                     onPressed: () async {
+                      if (_model.formKey.currentState == null ||
+                          !_model.formKey.currentState!.validate()) {
+                        return;
+                      }
                       if (_model.correoTextController.text.isEmpty) {
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(

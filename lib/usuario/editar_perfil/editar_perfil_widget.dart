@@ -28,13 +28,13 @@ class _EditarPerfilWidgetState extends State<EditarPerfilWidget> {
     super.initState();
     _model = createModel(context, () => EditarPerfilModel());
 
-    _model.nombreTextController ??=
-        TextEditingController(text: currentUserDisplayName);
-    _model.nombreFocusNode ??= FocusNode();
-
     _model.correoTextController ??=
         TextEditingController(text: currentUserEmail);
     _model.correoFocusNode ??= FocusNode();
+
+    _model.nombreTextController ??=
+        TextEditingController(text: currentUserDisplayName);
+    _model.nombreFocusNode ??= FocusNode();
 
     _model.telefonoTextController ??=
         TextEditingController(text: currentPhoneNumber);
@@ -229,8 +229,7 @@ class _EditarPerfilWidgetState extends State<EditarPerfilWidget> {
                                   8.0, 0.0, 0.0, 0.0),
                               child: Icon(
                                 Icons.add_a_photo,
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
+                                color: FlutterFlowTheme.of(context).primary,
                                 size: 50.0,
                               ),
                             ),
@@ -244,75 +243,17 @@ class _EditarPerfilWidgetState extends State<EditarPerfilWidget> {
             ),
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 16.0),
-              child: AuthUserStreamWidget(
-                builder: (context) => TextFormField(
-                  controller: _model.nombreTextController,
-                  focusNode: _model.nombreFocusNode,
-                  textCapitalization: TextCapitalization.words,
-                  obscureText: false,
-                  decoration: InputDecoration(
-                    labelText: currentUserDisplayName,
-                    labelStyle:
-                        FlutterFlowTheme.of(context).labelMedium.override(
-                              fontFamily: 'Readex Pro',
-                              letterSpacing: 0.0,
-                            ),
-                    hintStyle:
-                        FlutterFlowTheme.of(context).labelMedium.override(
-                              fontFamily: 'Readex Pro',
-                              letterSpacing: 0.0,
-                            ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).alternate,
-                        width: 2.0,
-                      ),
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).primary,
-                        width: 2.0,
-                      ),
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                    errorBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).error,
-                        width: 2.0,
-                      ),
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                    focusedErrorBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).error,
-                        width: 2.0,
-                      ),
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                    filled: true,
-                    fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                    contentPadding:
-                        const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
-                  ),
-                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Readex Pro',
-                        letterSpacing: 0.0,
-                      ),
-                  validator:
-                      _model.nombreTextControllerValidator.asValidator(context),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 16.0),
               child: TextFormField(
                 controller: _model.correoTextController,
                 focusNode: _model.correoFocusNode,
+                autofocus: false,
                 textCapitalization: TextCapitalization.words,
+                readOnly: true,
                 obscureText: false,
                 decoration: InputDecoration(
-                  labelText: currentUserEmail,
+                  labelText: FFLocalizations.of(context).getText(
+                    'ljsg1yzt' /* Correo */,
+                  ),
                   labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
                         fontFamily: 'Readex Pro',
                         letterSpacing: 0.0,
@@ -353,6 +294,9 @@ class _EditarPerfilWidgetState extends State<EditarPerfilWidget> {
                   fillColor: FlutterFlowTheme.of(context).secondaryBackground,
                   contentPadding:
                       const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
+                  prefixIcon: const Icon(
+                    Icons.mail,
+                  ),
                 ),
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                       fontFamily: 'Readex Pro',
@@ -366,12 +310,14 @@ class _EditarPerfilWidgetState extends State<EditarPerfilWidget> {
               padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 16.0),
               child: AuthUserStreamWidget(
                 builder: (context) => TextFormField(
-                  controller: _model.telefonoTextController,
-                  focusNode: _model.telefonoFocusNode,
+                  controller: _model.nombreTextController,
+                  focusNode: _model.nombreFocusNode,
                   textCapitalization: TextCapitalization.words,
                   obscureText: false,
                   decoration: InputDecoration(
-                    labelText: currentPhoneNumber,
+                    labelText: FFLocalizations.of(context).getText(
+                      '44hzli87' /* Nombre completo */,
+                    ),
                     labelStyle:
                         FlutterFlowTheme.of(context).labelMedium.override(
                               fontFamily: 'Readex Pro',
@@ -414,6 +360,76 @@ class _EditarPerfilWidgetState extends State<EditarPerfilWidget> {
                     fillColor: FlutterFlowTheme.of(context).secondaryBackground,
                     contentPadding:
                         const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
+                    prefixIcon: const Icon(
+                      Icons.drive_file_rename_outline_outlined,
+                    ),
+                  ),
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'Readex Pro',
+                        letterSpacing: 0.0,
+                      ),
+                  validator:
+                      _model.nombreTextControllerValidator.asValidator(context),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 16.0),
+              child: AuthUserStreamWidget(
+                builder: (context) => TextFormField(
+                  controller: _model.telefonoTextController,
+                  focusNode: _model.telefonoFocusNode,
+                  textCapitalization: TextCapitalization.words,
+                  obscureText: false,
+                  decoration: InputDecoration(
+                    labelText: FFLocalizations.of(context).getText(
+                      'qcj0dfrx' /* Número de teléfono */,
+                    ),
+                    labelStyle:
+                        FlutterFlowTheme.of(context).labelMedium.override(
+                              fontFamily: 'Readex Pro',
+                              letterSpacing: 0.0,
+                            ),
+                    hintStyle:
+                        FlutterFlowTheme.of(context).labelMedium.override(
+                              fontFamily: 'Readex Pro',
+                              letterSpacing: 0.0,
+                            ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).alternate,
+                        width: 2.0,
+                      ),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).primary,
+                        width: 2.0,
+                      ),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    errorBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).error,
+                        width: 2.0,
+                      ),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    focusedErrorBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).error,
+                        width: 2.0,
+                      ),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    filled: true,
+                    fillColor: FlutterFlowTheme.of(context).secondaryBackground,
+                    contentPadding:
+                        const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
+                    prefixIcon: const Icon(
+                      Icons.phone_in_talk,
+                    ),
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily: 'Readex Pro',

@@ -10,14 +10,14 @@ class EditarPerfilModel extends FlutterFlowModel<EditarPerfilWidget> {
       FFUploadedFile(bytes: Uint8List.fromList([]));
   String uploadedFileUrl = '';
 
-  // State field(s) for nombre widget.
-  FocusNode? nombreFocusNode;
-  TextEditingController? nombreTextController;
-  String? Function(BuildContext, String?)? nombreTextControllerValidator;
   // State field(s) for correo widget.
   FocusNode? correoFocusNode;
   TextEditingController? correoTextController;
   String? Function(BuildContext, String?)? correoTextControllerValidator;
+  // State field(s) for nombre widget.
+  FocusNode? nombreFocusNode;
+  TextEditingController? nombreTextController;
+  String? Function(BuildContext, String?)? nombreTextControllerValidator;
   // State field(s) for telefono widget.
   FocusNode? telefonoFocusNode;
   TextEditingController? telefonoTextController;
@@ -28,11 +28,11 @@ class EditarPerfilModel extends FlutterFlowModel<EditarPerfilWidget> {
 
   @override
   void dispose() {
-    nombreFocusNode?.dispose();
-    nombreTextController?.dispose();
-
     correoFocusNode?.dispose();
     correoTextController?.dispose();
+
+    nombreFocusNode?.dispose();
+    nombreTextController?.dispose();
 
     telefonoFocusNode?.dispose();
     telefonoTextController?.dispose();

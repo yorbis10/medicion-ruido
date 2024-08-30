@@ -1,14 +1,11 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'detalleusuario_widget.dart' show DetalleusuarioWidget;
+import 'ruido_en_vivo_widget.dart' show RuidoEnVivoWidget;
 import 'package:flutter/material.dart';
 
-class DetalleusuarioModel extends FlutterFlowModel<DetalleusuarioWidget> {
+class RuidoEnVivoModel extends FlutterFlowModel<RuidoEnVivoWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
-  DateTime? datePicked;
-  // State field(s) for SwitchListTile widget.
-  bool? switchListTileValue;
 
   @override
   void initState(BuildContext context) {}

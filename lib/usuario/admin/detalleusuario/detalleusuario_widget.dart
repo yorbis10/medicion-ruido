@@ -103,9 +103,9 @@ class _DetalleusuarioWidgetState extends State<DetalleusuarioWidget>
                               widget.detalleUsuario?.photoUrl,
                               'https://cdn-icons-png.flaticon.com/512/4122/4122901.png',
                             ),
-                            width: double.infinity,
-                            height: 500.0,
-                            fit: BoxFit.cover,
+                            width: 1000.0,
+                            height: 1000.0,
+                            fit: BoxFit.fill,
                           ),
                         ),
                         Align(
@@ -345,7 +345,7 @@ class _DetalleusuarioWidgetState extends State<DetalleusuarioWidget>
                         Expanded(
                           child: AuthUserStreamWidget(
                             builder: (context) => SwitchListTile.adaptive(
-                              value: _model.switchListTileValue ??= false,
+                              value: _model.switchListTileValue ??= true,
                               onChanged: (newValue) async {
                                 setState(() =>
                                     _model.switchListTileValue = newValue);
@@ -402,6 +402,24 @@ class _DetalleusuarioWidgetState extends State<DetalleusuarioWidget>
                     );
                   },
                 ).then((value) => safeSetState(() {}));
+
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text(
+                      'Se elimino la cuenta correctamente',
+                      style: TextStyle(
+                        color: FlutterFlowTheme.of(context).primaryText,
+                      ),
+                    ),
+                    duration: const Duration(milliseconds: 4000),
+                    backgroundColor: FlutterFlowTheme.of(context).secondary,
+                  ),
+                );
+                GoRouter.of(context).prepareAuthEvent();
+                await authManager.signOut();
+                GoRouter.of(context).clearRedirectLocation();
+
+                context.goNamedAuth('PaginaInicio', context.mounted);
               },
               text: FFLocalizations.of(context).getText(
                 '1swir9bp' /* Eliminar */,

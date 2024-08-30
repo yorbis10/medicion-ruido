@@ -268,7 +268,7 @@ class _PaginaInicioWidgetState extends State<PaginaInicioWidget>
                             const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 16.0),
                         child: FFButtonWidget(
                           onPressed: () async {
-                            context.pushNamed('login');
+                            context.pushNamed('RegistroUsuario');
                           },
                           text: FFLocalizations.of(context).getText(
                             '4979asxn' /* Ingresar */,

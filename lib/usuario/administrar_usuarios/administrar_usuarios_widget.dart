@@ -80,41 +80,21 @@ class _AdministrarUsuariosWidgetState extends State<AdministrarUsuariosWidget>
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 0.0),
-                    child: Text(
-                      FFLocalizations.of(context).getText(
-                        'a6yzujlr' /* Selecciona el usuario */,
-                      ),
-                      style: FlutterFlowTheme.of(context).labelMedium.override(
-                            fontFamily: 'Readex Pro',
-                            letterSpacing: 0.0,
-                          ),
-                    ),
-                  ),
-                  Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(4.0, 12.0, 16.0, 0.0),
-                    child: Text(
-                      FFLocalizations.of(context).getText(
-                        '08qyz6hf' /* ↓↓↓↓↓ */,
-                      ),
-                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Readex Pro',
-                            letterSpacing: 0.0,
-                          ),
-                    ),
-                  ),
-                ],
-              ),
               const Divider(
                 thickness: 1.0,
                 color: Color(0x00FFFFFF),
+              ),
+              Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 0.0),
+                child: Text(
+                  FFLocalizations.of(context).getText(
+                    'a6yzujlr' /* Selecciona el usuario */,
+                  ),
+                  style: FlutterFlowTheme.of(context).labelMedium.override(
+                        fontFamily: 'Readex Pro',
+                        letterSpacing: 0.0,
+                      ),
+                ),
               ),
               Expanded(
                 child: Padding(

@@ -8,19 +8,19 @@ import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:badges/badges.dart' as badges;
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'dash1_model.dart';
-export 'dash1_model.dart';
+import 'ruido_en_vivo_model.dart';
+export 'ruido_en_vivo_model.dart';
 
-class Dash1Widget extends StatefulWidget {
-  const Dash1Widget({super.key});
+class RuidoEnVivoWidget extends StatefulWidget {
+  const RuidoEnVivoWidget({super.key});
 
   @override
-  State<Dash1Widget> createState() => _Dash1WidgetState();
+  State<RuidoEnVivoWidget> createState() => _RuidoEnVivoWidgetState();
 }
 
-class _Dash1WidgetState extends State<Dash1Widget>
+class _RuidoEnVivoWidgetState extends State<RuidoEnVivoWidget>
     with TickerProviderStateMixin {
-  late Dash1Model _model;
+  late RuidoEnVivoModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -29,7 +29,7 @@ class _Dash1WidgetState extends State<Dash1Widget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => Dash1Model());
+    _model = createModel(context, () => RuidoEnVivoModel());
 
     animationsMap.addAll({
       'containerOnPageLoadAnimation': AnimationInfo(

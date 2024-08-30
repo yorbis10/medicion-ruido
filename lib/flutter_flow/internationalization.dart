@@ -151,6 +151,86 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Ingresa Aqui',
       'en': 'Enter Here',
     },
+    'ahq13p5f': {
+      'es': 'El nombre es obligatorio',
+      'en': 'Name is required',
+    },
+    'wg7lk5y0': {
+      'es': 'El nombre debe contener minimo 3 caracteres',
+      'en': 'The name must contain at least 3 characters',
+    },
+    '2goszjsj': {
+      'es': 'El nombre no debe exceder mas de 150  caracteres',
+      'en': '',
+    },
+    'coyeycp0': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'qu5rlvyo': {
+      'es': 'El correo es obligatorio Ej. info@ssaragon.com\n',
+      'en': 'Email is required',
+    },
+    'p8dmshzk': {
+      'es': 'Cantidad de caracteres  del correo no es correcto',
+      'en': 'The number of characters in the email is not correct',
+    },
+    'k0fa5zbs': {
+      'es': 'El formato del correo no es valido',
+      'en': '',
+    },
+    '6u1ee103': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'uqxanzuz': {
+      'es': 'El número de telefono es obligatoria',
+      'en': 'The phone number is required',
+    },
+    'ovv327b6': {
+      'es': 'Solo números,  ej: 4441122',
+      'en': '',
+    },
+    'koy67ut4': {
+      'es': 'No puede tenes mas de 15 caracteres',
+      'en': '',
+    },
+    'm3jlci3n': {
+      'es': 'El numero ingresado no es correcto',
+      'en': '',
+    },
+    'sf49vlcn': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    '5i54izd0': {
+      'es': 'La contraseña es obligatoria',
+      'en': '',
+    },
+    'h0nh5vvp': {
+      'es': 'Debe ingresar MInimo 6 caracteres',
+      'en': 'You must enter at least 6 characters',
+    },
+    '1vighw4l': {
+      'es': 'La contraseña no debe superar los 25 caracteres',
+      'en': 'The password must not exceed 25 characters',
+    },
+    'zsw95hs0': {
+      'es': 'La contraseña no cumple con los requisitos de seguridad\n',
+      'en': '',
+    },
+    'k9by210k': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'qbl2e27w': {
+      'es': 'La confirmacion de contraseña es obligatoria',
+      'en': 'Password confirmation is required',
+    },
+    '9gipsxa4': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
     'hvkuw0ar': {
       'es': 'Home',
       'en': 'home',
@@ -167,7 +247,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Welcome back',
     },
     '2inq44ae': {
-      'es': 'Comencemos completando el formulario a continuación.',
+      'es': 'Ingresa tus datos',
       'en': 'Let\'s get started by filling out the form below.',
     },
     'dh2q240o': {
@@ -188,6 +268,42 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'kahc4m9v': {
       'es': '¿Olvidaste la clave?',
+      'en': '',
+    },
+    'mxnp4isy': {
+      'es': 'El correo es obligatorio',
+      'en': 'Email is required',
+    },
+    'e9kxbi64': {
+      'es': 'Cantidad de caracteres  del correo no es correcto',
+      'en': 'The number of characters in the email is not correct',
+    },
+    '5uz2zhht': {
+      'es': 'El formato del correo no es valido',
+      'en': 'The email format is not valid',
+    },
+    'qhhm4jv8': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'djmyy7bb': {
+      'es': 'La contraseña es obligatoria',
+      'en': 'Password is required',
+    },
+    'ksapcnjs': {
+      'es': 'Debe ingresar MInimo 6 caracteres',
+      'en': 'You must enter a minimum of 6 characters',
+    },
+    '9inopavz': {
+      'es': 'La contraseña no debe superar los 25 caracteres',
+      'en': '',
+    },
+    '1st2vfhx': {
+      'es': 'La contraseña no cumple con los requisitos de seguridad',
+      'en': 'The password does not meet the security requirements',
+    },
+    '12wfpksk': {
+      'es': 'Please choose an option from the dropdown',
       'en': '',
     },
     'mfyuz3o2': {
@@ -215,7 +331,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
-  // dash1
+  // RuidoEnVivo
   {
     '73bv5nhd': {
       'es': 'Tasks',
@@ -327,6 +443,18 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // EditarPerfil
   {
+    'ljsg1yzt': {
+      'es': 'Correo',
+      'en': '',
+    },
+    '44hzli87': {
+      'es': 'Nombre completo',
+      'en': '',
+    },
+    'qcj0dfrx': {
+      'es': 'Número de teléfono',
+      'en': '',
+    },
     '257l0k26': {
       'es': 'Guardar Cambios',
       'en': '',
@@ -348,11 +476,27 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'ayuklw2h': {
-      'es': 'Correo electronico ...',
+      'es': 'Correo electronico',
       'en': '',
     },
     'hchqh82b': {
-      'es': 'Ecribe tu correo ...',
+      'es': 'Escribe tu correo electronico....',
+      'en': '',
+    },
+    'qn2hepbo': {
+      'es': 'El correo es obligatorio  Ej. info@ssaragon.com',
+      'en': '',
+    },
+    'y1kcrio3': {
+      'es': 'Cantidad de caracteres  del correo no es correcto',
+      'en': '',
+    },
+    'b9kvmb9g': {
+      'es': 'El formato del correo no es valido',
+      'en': '',
+    },
+    'mwqo8tkn': {
+      'es': 'Please choose an option from the dropdown',
       'en': '',
     },
     '4cx6gnlh': {
@@ -401,10 +545,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Selecciona el usuario',
       'en': '',
     },
-    '08qyz6hf': {
-      'es': '↓↓↓↓↓',
-      'en': '',
-    },
     '7zg1c4qw': {
       'es': 'Gestionar Usuarios',
       'en': '',
@@ -417,7 +557,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // MenuAministracion
   {
     'p2mp4roa': {
-      'es': 'Este es el munu para los usuarios con rol de administrador',
+      'es': 'Este es el mEnu para los usuarios con rol de administrador',
       'en': '',
     },
     '8ag2yi0d': {
@@ -429,23 +569,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'lcykfkva': {
-      'es': 'Tableros',
+      'es': 'Medición en vivo',
       'en': '',
     },
     'n1pl51rp': {
-      'es': '56.4k',
-      'en': '',
-    },
-    '3hsqsgxs': {
-      'es': 'Customers',
+      'es': 'Mapas de calor',
       'en': '',
     },
     'bsesskj7': {
-      'es': '56.4k',
-      'en': '',
-    },
-    'flp5ulgz': {
-      'es': 'Customers',
+      'es': 'Reportes',
       'en': '',
     },
     'yxabhsv4': {
@@ -474,42 +606,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'm3zjshu0': {
       'es': 'Home',
       'en': 'home',
-    },
-  },
-  // pass55
-  {
-    'aa8miz9p': {
-      'es': 'Back',
-      'en': '',
-    },
-    '5f45e282': {
-      'es': 'Forgot Password',
-      'en': '',
-    },
-    '96n751n1': {
-      'es':
-          'We will send you an email with a link to reset your password, please enter the email associated with your account below.',
-      'en': '',
-    },
-    '96keum7e': {
-      'es': 'Your email address...',
-      'en': '',
-    },
-    'ura0f8xg': {
-      'es': 'Enter your email...',
-      'en': '',
-    },
-    '5qx2kzje': {
-      'es': 'Send Link',
-      'en': '',
-    },
-    'j75o20hv': {
-      'es': 'Page Title',
-      'en': '',
-    },
-    'jwq5qu3k': {
-      'es': 'Home',
-      'en': '',
     },
   },
   // CambiarClave

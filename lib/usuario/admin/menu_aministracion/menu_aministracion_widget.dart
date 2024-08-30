@@ -1,5 +1,4 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -46,20 +45,6 @@ class _MenuAministracionWidgetState extends State<MenuAministracionWidget>
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).primary,
           automaticallyImplyLeading: false,
-          leading: FlutterFlowIconButton(
-            borderColor: Colors.transparent,
-            borderRadius: 30.0,
-            borderWidth: 1.0,
-            buttonSize: 60.0,
-            icon: const Icon(
-              Icons.arrow_back_rounded,
-              color: Colors.white,
-              size: 30.0,
-            ),
-            onPressed: () async {
-              context.pop();
-            },
-          ),
           title: Text(
             FFLocalizations.of(context).getText(
               'yxabhsv4' /* Panel de Administración */,
@@ -87,45 +72,59 @@ class _MenuAministracionWidgetState extends State<MenuAministracionWidget>
                   Padding(
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                    child: Container(
-                      width: 100.0,
-                      height: 100.0,
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [
-                            FlutterFlowTheme.of(context).primary,
-                            FlutterFlowTheme.of(context).tertiary
-                          ],
-                          stops: const [0.0, 1.0],
-                          begin: const AlignmentDirectional(1.0, -1.0),
-                          end: const AlignmentDirectional(-1.0, 1.0),
+                    child: InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        if (valueOrDefault<bool>(
+                            currentUserDocument?.esAdmin, false)) {
+                          context.pushNamed('PerfilAdmin');
+                        } else {
+                          context.pushNamed('PerfilUsuario');
+                        }
+                      },
+                      child: Container(
+                        width: 100.0,
+                        height: 100.0,
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [
+                              FlutterFlowTheme.of(context).primary,
+                              FlutterFlowTheme.of(context).tertiary
+                            ],
+                            stops: const [0.0, 1.0],
+                            begin: const AlignmentDirectional(1.0, -1.0),
+                            end: const AlignmentDirectional(-1.0, 1.0),
+                          ),
+                          shape: BoxShape.circle,
                         ),
-                        shape: BoxShape.circle,
-                      ),
-                      child: Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
-                        child: Padding(
-                          padding: const EdgeInsets.all(4.0),
-                          child: Container(
-                            width: 100.0,
-                            height: 100.0,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context).primaryText,
-                              shape: BoxShape.circle,
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.all(4.0),
-                              child: AuthUserStreamWidget(
-                                builder: (context) => ClipRRect(
-                                  borderRadius: BorderRadius.circular(50.0),
-                                  child: Image.network(
-                                    valueOrDefault<String>(
-                                      currentUserPhoto,
-                                      'https://cdn-icons-png.flaticon.com/512/4122/4122901.png',
+                        child: Align(
+                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          child: Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: Container(
+                              width: 100.0,
+                              height: 100.0,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context).primaryText,
+                                shape: BoxShape.circle,
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.all(4.0),
+                                child: AuthUserStreamWidget(
+                                  builder: (context) => ClipRRect(
+                                    borderRadius: BorderRadius.circular(50.0),
+                                    child: Image.network(
+                                      valueOrDefault<String>(
+                                        currentUserPhoto,
+                                        'https://cdn-icons-png.flaticon.com/512/4122/4122901.png',
+                                      ),
+                                      width: 100.0,
+                                      height: 100.0,
+                                      fit: BoxFit.cover,
                                     ),
-                                    width: 100.0,
-                                    height: 100.0,
-                                    fit: BoxFit.cover,
                                   ),
                                 ),
                               ),
@@ -175,7 +174,7 @@ class _MenuAministracionWidgetState extends State<MenuAministracionWidget>
                 padding: const EdgeInsetsDirectional.fromSTEB(24.0, 12.0, 24.0, 0.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
-                    'p2mp4roa' /* Este es el munu para los usuar... */,
+                    'p2mp4roa' /* Este es el mEnu para los usuar... */,
                   ),
                   textAlign: TextAlign.center,
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -346,7 +345,8 @@ class _MenuAministracionWidgetState extends State<MenuAministracionWidget>
                                               highlightColor:
                                                   Colors.transparent,
                                               onTap: () async {
-                                                context.pushNamed('dash1');
+                                                context
+                                                    .pushNamed('RuidoEnVivo');
                                               },
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
@@ -354,7 +354,8 @@ class _MenuAministracionWidgetState extends State<MenuAministracionWidget>
                                                     MainAxisAlignment.center,
                                                 children: [
                                                   Icon(
-                                                    Icons.dashboard_outlined,
+                                                    Icons
+                                                        .surround_sound_outlined,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primary,
@@ -369,7 +370,7 @@ class _MenuAministracionWidgetState extends State<MenuAministracionWidget>
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        'lcykfkva' /* Tableros */,
+                                                        'lcykfkva' /* Medición en vivo */,
                                                       ),
                                                       textAlign:
                                                           TextAlign.center,
@@ -412,8 +413,7 @@ class _MenuAministracionWidgetState extends State<MenuAministracionWidget>
                                                   MainAxisAlignment.center,
                                               children: [
                                                 Icon(
-                                                  Icons
-                                                      .admin_panel_settings_outlined,
+                                                  Icons.whatshot_outlined,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primary,
@@ -426,7 +426,7 @@ class _MenuAministracionWidgetState extends State<MenuAministracionWidget>
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'n1pl51rp' /* 56.4k */,
+                                                      'n1pl51rp' /* Mapas de calor */,
                                                     ),
                                                     textAlign: TextAlign.center,
                                                     style: FlutterFlowTheme.of(
@@ -434,24 +434,10 @@ class _MenuAministracionWidgetState extends State<MenuAministracionWidget>
                                                         .displaySmall
                                                         .override(
                                                           fontFamily: 'Inter',
+                                                          fontSize: 25.0,
                                                           letterSpacing: 0.0,
                                                         ),
                                                   ),
-                                                ),
-                                                Text(
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    '3hsqsgxs' /* Customers */,
-                                                  ),
-                                                  textAlign: TextAlign.center,
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .labelSmall
-                                                      .override(
-                                                        fontFamily:
-                                                            'Readex Pro',
-                                                        letterSpacing: 0.0,
-                                                      ),
                                                 ),
                                               ],
                                             ),
@@ -481,7 +467,7 @@ class _MenuAministracionWidgetState extends State<MenuAministracionWidget>
                                                   MainAxisAlignment.center,
                                               children: [
                                                 Icon(
-                                                  Icons.surround_sound_outlined,
+                                                  Icons.downloading,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primary,
@@ -494,7 +480,7 @@ class _MenuAministracionWidgetState extends State<MenuAministracionWidget>
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'bsesskj7' /* 56.4k */,
+                                                      'bsesskj7' /* Reportes */,
                                                     ),
                                                     textAlign: TextAlign.center,
                                                     style: FlutterFlowTheme.of(
@@ -502,24 +488,10 @@ class _MenuAministracionWidgetState extends State<MenuAministracionWidget>
                                                         .displaySmall
                                                         .override(
                                                           fontFamily: 'Inter',
+                                                          fontSize: 25.0,
                                                           letterSpacing: 0.0,
                                                         ),
                                                   ),
-                                                ),
-                                                Text(
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    'flp5ulgz' /* Customers */,
-                                                  ),
-                                                  textAlign: TextAlign.center,
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .labelSmall
-                                                      .override(
-                                                        fontFamily:
-                                                            'Readex Pro',
-                                                        letterSpacing: 0.0,
-                                                      ),
                                                 ),
                                               ],
                                             ),

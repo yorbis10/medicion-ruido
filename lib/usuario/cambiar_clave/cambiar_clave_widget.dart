@@ -181,9 +181,8 @@ class _CambiarClaveWidgetState extends State<CambiarClaveWidget> {
                                 buttonSize: 44.0,
                                 icon: Icon(
                                   Icons.close_rounded,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  size: 24.0,
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  size: 30.0,
                                 ),
                                 onPressed: () async {
                                   Navigator.pop(context);
@@ -192,30 +191,59 @@ class _CambiarClaveWidgetState extends State<CambiarClaveWidget> {
                             ],
                           ),
                         ),
-                        Column(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      24.0, 12.0, 0.0, 12.0),
-                                  child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      'vjyexf7b' /* Cambiar la contraseña */,
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Readex Pro',
-                                          letterSpacing: 0.0,
-                                        ),
+                        Align(
+                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          child: Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                24.0, 12.0, 0.0, 12.0),
+                            child: Text(
+                              FFLocalizations.of(context).getText(
+                                'vjyexf7b' /* Cambiar la contraseña */,
+                              ),
+                              textAlign: TextAlign.center,
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Readex Pro',
+                                    fontSize: 20.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w600,
                                   ),
-                                ),
-                              ],
                             ),
-                          ],
+                          ),
+                        ),
+                        Align(
+                          alignment: const AlignmentDirectional(1.0, 0.0),
+                          child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              await showDialog(
+                                context: context,
+                                builder: (alertDialogContext) {
+                                  return AlertDialog(
+                                    title: const Text('Requisitos de la contraseña'),
+                                    content: const Text(
+                                        'La contraseña debe contener: letras mayúsculas y minúsculas, números y caracteres especiales'),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () =>
+                                            Navigator.pop(alertDialogContext),
+                                        child: const Text('Aceptar'),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              );
+                            },
+                            child: Icon(
+                              Icons.help_outline,
+                              color: FlutterFlowTheme.of(context).primary,
+                              size: 40.0,
+                            ),
+                          ),
                         ),
                         Column(
                           mainAxisSize: MainAxisSize.max,
@@ -227,7 +255,8 @@ class _CambiarClaveWidgetState extends State<CambiarClaveWidget> {
                                 controller: _model.claveActualTextController,
                                 focusNode: _model.claveActualFocusNode,
                                 autofocus: true,
-                                obscureText: false,
+                                autofillHints: const [AutofillHints.password],
+                                obscureText: !_model.claveActualVisibility,
                                 decoration: InputDecoration(
                                   labelText:
                                       FFLocalizations.of(context).getText(
@@ -247,8 +276,8 @@ class _CambiarClaveWidgetState extends State<CambiarClaveWidget> {
                                       ),
                                   enabledBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
-                                      color: FlutterFlowTheme.of(context)
-                                          .alternate,
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
                                       width: 2.0,
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
@@ -274,6 +303,23 @@ class _CambiarClaveWidgetState extends State<CambiarClaveWidget> {
                                       width: 2.0,
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                  filled: true,
+                                  fillColor: Colors.white,
+                                  suffixIcon: InkWell(
+                                    onTap: () => setState(
+                                      () => _model.claveActualVisibility =
+                                          !_model.claveActualVisibility,
+                                    ),
+                                    focusNode: FocusNode(skipTraversal: true),
+                                    child: Icon(
+                                      _model.claveActualVisibility
+                                          ? Icons.visibility_outlined
+                                          : Icons.visibility_off_outlined,
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      size: 22,
+                                    ),
                                   ),
                                 ),
                                 style: FlutterFlowTheme.of(context)
@@ -294,7 +340,8 @@ class _CambiarClaveWidgetState extends State<CambiarClaveWidget> {
                                 controller: _model.nuevaClaveTextController,
                                 focusNode: _model.nuevaClaveFocusNode,
                                 autofocus: true,
-                                obscureText: false,
+                                autofillHints: const [AutofillHints.password],
+                                obscureText: !_model.nuevaClaveVisibility,
                                 decoration: InputDecoration(
                                   labelText:
                                       FFLocalizations.of(context).getText(
@@ -314,8 +361,8 @@ class _CambiarClaveWidgetState extends State<CambiarClaveWidget> {
                                       ),
                                   enabledBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
-                                      color: FlutterFlowTheme.of(context)
-                                          .alternate,
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
                                       width: 2.0,
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
@@ -341,6 +388,23 @@ class _CambiarClaveWidgetState extends State<CambiarClaveWidget> {
                                       width: 2.0,
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                  filled: true,
+                                  fillColor: Colors.white,
+                                  suffixIcon: InkWell(
+                                    onTap: () => setState(
+                                      () => _model.nuevaClaveVisibility =
+                                          !_model.nuevaClaveVisibility,
+                                    ),
+                                    focusNode: FocusNode(skipTraversal: true),
+                                    child: Icon(
+                                      _model.nuevaClaveVisibility
+                                          ? Icons.visibility_outlined
+                                          : Icons.visibility_off_outlined,
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      size: 22,
+                                    ),
                                   ),
                                 ),
                                 style: FlutterFlowTheme.of(context)
@@ -361,7 +425,8 @@ class _CambiarClaveWidgetState extends State<CambiarClaveWidget> {
                                 controller: _model.confirmaClaveTextController,
                                 focusNode: _model.confirmaClaveFocusNode,
                                 autofocus: true,
-                                obscureText: false,
+                                autofillHints: const [AutofillHints.password],
+                                obscureText: !_model.confirmaClaveVisibility,
                                 decoration: InputDecoration(
                                   labelText:
                                       FFLocalizations.of(context).getText(
@@ -381,8 +446,8 @@ class _CambiarClaveWidgetState extends State<CambiarClaveWidget> {
                                       ),
                                   enabledBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
-                                      color: FlutterFlowTheme.of(context)
-                                          .alternate,
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
                                       width: 2.0,
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
@@ -408,6 +473,23 @@ class _CambiarClaveWidgetState extends State<CambiarClaveWidget> {
                                       width: 2.0,
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                  filled: true,
+                                  fillColor: const Color(0xFFFFFEFE),
+                                  suffixIcon: InkWell(
+                                    onTap: () => setState(
+                                      () => _model.confirmaClaveVisibility =
+                                          !_model.confirmaClaveVisibility,
+                                    ),
+                                    focusNode: FocusNode(skipTraversal: true),
+                                    child: Icon(
+                                      _model.confirmaClaveVisibility
+                                          ? Icons.visibility_outlined
+                                          : Icons.visibility_off_outlined,
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      size: 22,
+                                    ),
                                   ),
                                 ),
                                 style: FlutterFlowTheme.of(context)
