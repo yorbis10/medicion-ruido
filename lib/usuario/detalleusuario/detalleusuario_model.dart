@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 class DetalleusuarioModel extends FlutterFlowModel<DetalleusuarioWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   DateTime? datePicked;
   // State field(s) for SwitchListTile widget.
   bool? switchListTileValue;

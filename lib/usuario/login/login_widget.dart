@@ -29,7 +29,7 @@ class _LoginWidgetState extends State<LoginWidget> {
     _model.claveTextController ??= TextEditingController();
     _model.claveFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -289,7 +289,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .primaryBackground,
                                           suffixIcon: InkWell(
-                                            onTap: () => setState(
+                                            onTap: () => safeSetState(
                                               () => _model.claveVisibility =
                                                   !_model.claveVisibility,
                                             ),

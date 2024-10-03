@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'ruido_en_vivo_widget.dart' show RuidoEnVivoWidget;
+import 'mapa_de_calor_widget.dart' show MapaDeCalorWidget;
 import 'package:flutter/material.dart';
 
-class RuidoEnVivoModel extends FlutterFlowModel<RuidoEnVivoWidget> {
+class MapaDeCalorModel extends FlutterFlowModel<MapaDeCalorWidget> {
   @override
   void initState(BuildContext context) {}
 

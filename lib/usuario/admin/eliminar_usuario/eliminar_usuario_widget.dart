@@ -27,7 +27,7 @@ class _EliminarUsuarioWidgetState extends State<EliminarUsuarioWidget> {
     super.initState();
     _model = createModel(context, () => EliminarUsuarioModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

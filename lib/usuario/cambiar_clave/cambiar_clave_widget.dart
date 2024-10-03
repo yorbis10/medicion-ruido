@@ -7,6 +7,7 @@ import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'cambiar_clave_model.dart';
 export 'cambiar_clave_model.dart';
 
@@ -40,7 +41,7 @@ class _CambiarClaveWidgetState extends State<CambiarClaveWidget> {
     _model.confirmaClaveTextController ??= TextEditingController();
     _model.confirmaClaveFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -223,17 +224,20 @@ class _CambiarClaveWidgetState extends State<CambiarClaveWidget> {
                               await showDialog(
                                 context: context,
                                 builder: (alertDialogContext) {
-                                  return AlertDialog(
-                                    title: const Text('Requisitos de la contraseña'),
-                                    content: const Text(
-                                        'La contraseña debe contener: letras mayúsculas y minúsculas, números y caracteres especiales'),
-                                    actions: [
-                                      TextButton(
-                                        onPressed: () =>
-                                            Navigator.pop(alertDialogContext),
-                                        child: const Text('Aceptar'),
-                                      ),
-                                    ],
+                                  return WebViewAware(
+                                    child: AlertDialog(
+                                      title:
+                                          const Text('Requisitos de la contraseña'),
+                                      content: const Text(
+                                          'La contraseña debe contener: letras mayúsculas y minúsculas, números y caracteres especiales'),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () =>
+                                              Navigator.pop(alertDialogContext),
+                                          child: const Text('Aceptar'),
+                                        ),
+                                      ],
+                                    ),
                                   );
                                 },
                               );
@@ -307,7 +311,7 @@ class _CambiarClaveWidgetState extends State<CambiarClaveWidget> {
                                   filled: true,
                                   fillColor: Colors.white,
                                   suffixIcon: InkWell(
-                                    onTap: () => setState(
+                                    onTap: () => safeSetState(
                                       () => _model.claveActualVisibility =
                                           !_model.claveActualVisibility,
                                     ),
@@ -332,6 +336,10 @@ class _CambiarClaveWidgetState extends State<CambiarClaveWidget> {
                                     .claveActualTextControllerValidator
                                     .asValidator(context),
                               ),
+                            ),
+                            const Divider(
+                              thickness: 1.0,
+                              color: Color(0x00FFFFFF),
                             ),
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
@@ -392,7 +400,7 @@ class _CambiarClaveWidgetState extends State<CambiarClaveWidget> {
                                   filled: true,
                                   fillColor: Colors.white,
                                   suffixIcon: InkWell(
-                                    onTap: () => setState(
+                                    onTap: () => safeSetState(
                                       () => _model.nuevaClaveVisibility =
                                           !_model.nuevaClaveVisibility,
                                     ),
@@ -417,6 +425,10 @@ class _CambiarClaveWidgetState extends State<CambiarClaveWidget> {
                                     .nuevaClaveTextControllerValidator
                                     .asValidator(context),
                               ),
+                            ),
+                            const Divider(
+                              thickness: 1.0,
+                              color: Color(0x00FFFFFF),
                             ),
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
@@ -477,7 +489,7 @@ class _CambiarClaveWidgetState extends State<CambiarClaveWidget> {
                                   filled: true,
                                   fillColor: const Color(0xFFFFFEFE),
                                   suffixIcon: InkWell(
-                                    onTap: () => setState(
+                                    onTap: () => safeSetState(
                                       () => _model.confirmaClaveVisibility =
                                           !_model.confirmaClaveVisibility,
                                     ),
@@ -549,23 +561,25 @@ class _CambiarClaveWidgetState extends State<CambiarClaveWidget> {
                                         await showDialog(
                                           context: context,
                                           builder: (alertDialogContext) {
-                                            return AlertDialog(
-                                              title:
-                                                  const Text('Contraseña incorrecta'),
-                                              content: const Text(
-                                                  'la contraseña ingresada es incorreota o está vacia'),
-                                              actions: [
-                                                TextButton(
-                                                  onPressed: () =>
-                                                      Navigator.pop(
-                                                          alertDialogContext),
-                                                  child: const Text('Ok'),
-                                                ),
-                                              ],
+                                            return WebViewAware(
+                                              child: AlertDialog(
+                                                title: const Text(
+                                                    'Contraseña incorrecta'),
+                                                content: const Text(
+                                                    'la contraseña ingresada es incorreota o está vacia'),
+                                                actions: [
+                                                  TextButton(
+                                                    onPressed: () =>
+                                                        Navigator.pop(
+                                                            alertDialogContext),
+                                                    child: const Text('Ok'),
+                                                  ),
+                                                ],
+                                              ),
                                             );
                                           },
                                         );
-                                        setState(() {
+                                        safeSetState(() {
                                           _model.claveActualTextController
                                               ?.clear();
                                           _model.nuevaClaveTextController
@@ -577,7 +591,7 @@ class _CambiarClaveWidgetState extends State<CambiarClaveWidget> {
 
                                       navigate();
 
-                                      setState(() {});
+                                      safeSetState(() {});
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       'l9varrp3' /* Cambiar la contraseña */,

@@ -8,6 +8,7 @@ import '/usuario/admin/eliminar_usuario/eliminar_usuario_widget.dart';
 import '/usuario/cambiar_clave/cambiar_clave_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'perfil_usuario_model.dart';
 export 'perfil_usuario_model.dart';
 
@@ -200,7 +201,7 @@ class _PerfilUsuarioWidgetState extends State<PerfilUsuarioWidget>
       this,
     );
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -236,7 +237,7 @@ class _PerfilUsuarioWidgetState extends State<PerfilUsuarioWidget>
           ),
           title: Text(
             FFLocalizations.of(context).getText(
-              'h3s495y9' /* Perfil de Usuario */,
+              '3846dk3r' /* Perfil de Usuario */,
             ),
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: 'Inter',
@@ -380,11 +381,13 @@ class _PerfilUsuarioWidgetState extends State<PerfilUsuarioWidget>
                       enableDrag: false,
                       context: context,
                       builder: (context) {
-                        return GestureDetector(
-                          onTap: () => FocusScope.of(context).unfocus(),
-                          child: Padding(
-                            padding: MediaQuery.viewInsetsOf(context),
-                            child: const CambiarClaveWidget(),
+                        return WebViewAware(
+                          child: GestureDetector(
+                            onTap: () => FocusScope.of(context).unfocus(),
+                            child: Padding(
+                              padding: MediaQuery.viewInsetsOf(context),
+                              child: const CambiarClaveWidget(),
+                            ),
                           ),
                         );
                       },
@@ -451,11 +454,13 @@ class _PerfilUsuarioWidgetState extends State<PerfilUsuarioWidget>
                       enableDrag: false,
                       context: context,
                       builder: (context) {
-                        return GestureDetector(
-                          onTap: () => FocusScope.of(context).unfocus(),
-                          child: Padding(
-                            padding: MediaQuery.viewInsetsOf(context),
-                            child: const EliminarUsuarioWidget(),
+                        return WebViewAware(
+                          child: GestureDetector(
+                            onTap: () => FocusScope.of(context).unfocus(),
+                            child: Padding(
+                              padding: MediaQuery.viewInsetsOf(context),
+                              child: const EliminarUsuarioWidget(),
+                            ),
                           ),
                         );
                       },

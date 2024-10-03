@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'editar_perfil_model.dart';
 export 'editar_perfil_model.dart';
 
@@ -40,7 +41,7 @@ class _EditarPerfilWidgetState extends State<EditarPerfilWidget> {
         TextEditingController(text: currentPhoneNumber);
     _model.telefonoFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -120,14 +121,16 @@ class _EditarPerfilWidgetState extends State<EditarPerfilWidget> {
                       if (selectedMedia != null &&
                           selectedMedia.every((m) =>
                               validateFileFormat(m.storagePath, context))) {
-                        setState(() => _model.isDataUploading = true);
+                        safeSetState(() => _model.isDataUploading = true);
                         var selectedUploadedFiles = <FFUploadedFile>[];
 
                         var downloadUrls = <String>[];
                         try {
                           showUploadMessage(
                             context,
-                            'Uploading file...',
+                            FFLocalizations.of(context).getText(
+                              'u5bt4k7f' /* Subiendo archivo... */,
+                            ),
                             showLoading: true,
                           );
                           selectedUploadedFiles = selectedMedia
@@ -156,15 +159,23 @@ class _EditarPerfilWidgetState extends State<EditarPerfilWidget> {
                         if (selectedUploadedFiles.length ==
                                 selectedMedia.length &&
                             downloadUrls.length == selectedMedia.length) {
-                          setState(() {
+                          safeSetState(() {
                             _model.uploadedLocalFile =
                                 selectedUploadedFiles.first;
                             _model.uploadedFileUrl = downloadUrls.first;
                           });
-                          showUploadMessage(context, 'Success!');
+                          showUploadMessage(
+                              context,
+                              FFLocalizations.of(context).getText(
+                                'bfo0t3jz' /* éxito */,
+                              ));
                         } else {
-                          setState(() {});
-                          showUploadMessage(context, 'Failed to upload data');
+                          safeSetState(() {});
+                          showUploadMessage(
+                              context,
+                              FFLocalizations.of(context).getText(
+                                'jvjxs8xk' /* no se pudieron cargar los dato... */,
+                              ));
                           return;
                         }
                       }
@@ -241,70 +252,113 @@ class _EditarPerfilWidgetState extends State<EditarPerfilWidget> {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 16.0),
-              child: TextFormField(
-                controller: _model.correoTextController,
-                focusNode: _model.correoFocusNode,
-                autofocus: false,
-                textCapitalization: TextCapitalization.words,
-                readOnly: true,
-                obscureText: false,
-                decoration: InputDecoration(
-                  labelText: FFLocalizations.of(context).getText(
-                    'ljsg1yzt' /* Correo */,
-                  ),
-                  labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily: 'Readex Pro',
-                        letterSpacing: 0.0,
+            Row(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Expanded(
+                  child: Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 16.0),
+                    child: TextFormField(
+                      controller: _model.correoTextController,
+                      focusNode: _model.correoFocusNode,
+                      autofocus: false,
+                      textCapitalization: TextCapitalization.words,
+                      readOnly: true,
+                      obscureText: false,
+                      decoration: InputDecoration(
+                        labelText: FFLocalizations.of(context).getText(
+                          'ljsg1yzt' /* Correo */,
+                        ),
+                        labelStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                        hintStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(
+                            color: Color(0x00E0E3E7),
+                            width: 2.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).primary,
+                            width: 2.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                        errorBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).error,
+                            width: 2.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                        focusedErrorBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).error,
+                            width: 2.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                        filled: true,
+                        fillColor:
+                            FlutterFlowTheme.of(context).secondaryBackground,
+                        contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                            20.0, 24.0, 0.0, 24.0),
+                        prefixIcon: const Icon(
+                          Icons.mail,
+                        ),
                       ),
-                  hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily: 'Readex Pro',
-                        letterSpacing: 0.0,
-                      ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: FlutterFlowTheme.of(context).alternate,
-                      width: 2.0,
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Readex Pro',
+                            letterSpacing: 0.0,
+                          ),
+                      validator: _model.correoTextControllerValidator
+                          .asValidator(context),
                     ),
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: FlutterFlowTheme.of(context).primary,
-                      width: 2.0,
-                    ),
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  errorBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: FlutterFlowTheme.of(context).error,
-                      width: 2.0,
-                    ),
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  focusedErrorBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: FlutterFlowTheme.of(context).error,
-                      width: 2.0,
-                    ),
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  filled: true,
-                  fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                  contentPadding:
-                      const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
-                  prefixIcon: const Icon(
-                    Icons.mail,
                   ),
                 ),
-                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Readex Pro',
-                      letterSpacing: 0.0,
-                    ),
-                validator:
-                    _model.correoTextControllerValidator.asValidator(context),
-              ),
+                InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () async {
+                    await showDialog(
+                      context: context,
+                      builder: (alertDialogContext) {
+                        return WebViewAware(
+                          child: AlertDialog(
+                            title: const Text('Cambio de correo'),
+                            content: const Text(
+                                'Si requieres cambiar el correo debe contactar al administradador'),
+                            actions: [
+                              TextButton(
+                                onPressed: () =>
+                                    Navigator.pop(alertDialogContext),
+                                child: const Text('Aceptar'),
+                              ),
+                            ],
+                          ),
+                        );
+                      },
+                    );
+                  },
+                  child: Icon(
+                    Icons.info_outlined,
+                    color: FlutterFlowTheme.of(context).primary,
+                    size: 24.0,
+                  ),
+                ),
+              ],
             ),
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 16.0),

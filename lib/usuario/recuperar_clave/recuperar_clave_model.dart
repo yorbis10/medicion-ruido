@@ -13,19 +13,19 @@ class RecuperarClaveModel extends FlutterFlowModel<RecuperarClaveWidget> {
   String? _correoTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'qn2hepbo' /* El correo es obligatorio  Ej. ... */,
+        'zoz80tix' /* El correo es obligatorio  Ej. ... */,
       );
     }
 
     if (val.length < 5) {
       return FFLocalizations.of(context).getText(
-        'y1kcrio3' /* Cantidad de caracteres  del co... */,
+        'ja56n979' /* Cantidad de caracteres  del co... */,
       );
     }
 
     if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
       return FFLocalizations.of(context).getText(
-        'b9kvmb9g' /* El formato del correo no es va... */,
+        'rbknxa61' /* El formato del correo no es va... */,
       );
     }
     return null;

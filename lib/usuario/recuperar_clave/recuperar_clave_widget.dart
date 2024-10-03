@@ -27,7 +27,7 @@ class _RecuperarClaveWidgetState extends State<RecuperarClaveWidget> {
     _model.correoTextController ??= TextEditingController();
     _model.correoFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -87,203 +87,216 @@ class _RecuperarClaveWidgetState extends State<RecuperarClaveWidget> {
           decoration: const BoxDecoration(),
           child: Column(
             mainAxisSize: MainAxisSize.max,
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Divider(
-                thickness: 1.0,
-                color: Color(0x00FFFFFF),
-              ),
-              const Divider(
-                thickness: 1.0,
-                color: Color(0x00FFFFFF),
-              ),
-              const Divider(
-                thickness: 1.0,
-                color: Color(0x00FFFFFF),
-              ),
-              const Divider(
-                thickness: 1.0,
-                color: Color(0x00FFFFFF),
-              ),
-              const Divider(
-                thickness: 1.0,
-                color: Color(0x00FFFFFF),
-              ),
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
-                child: Text(
-                  FFLocalizations.of(context).getText(
-                    'mle41a9i' /* Has olvidado tu contraseña */,
+              Column(
+                mainAxisSize: MainAxisSize.max,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Divider(
+                    thickness: 1.0,
+                    color: Color(0x00FFFFFF),
                   ),
-                  style: FlutterFlowTheme.of(context).headlineMedium.override(
-                        fontFamily: 'Inter',
-                        letterSpacing: 0.0,
-                      ),
-                ),
-              ),
-              const Divider(
-                thickness: 1.0,
-                color: Color(0x00FFFFFF),
-              ),
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
-                child: Text(
-                  FFLocalizations.of(context).getText(
-                    'tdlcm4ob' /* Le enviaremos un correo electr... */,
+                  const Divider(
+                    thickness: 1.0,
+                    color: Color(0x00FFFFFF),
                   ),
-                  style: FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily: 'Readex Pro',
-                        letterSpacing: 0.0,
+                  const Divider(
+                    thickness: 1.0,
+                    color: Color(0x00FFFFFF),
+                  ),
+                  const Divider(
+                    thickness: 1.0,
+                    color: Color(0x00FFFFFF),
+                  ),
+                  const Divider(
+                    thickness: 1.0,
+                    color: Color(0x00FFFFFF),
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                    child: Text(
+                      FFLocalizations.of(context).getText(
+                        '9pse8kx0' /* Has olvidado tu contraseña */,
                       ),
-                ),
-              ),
-              const Divider(
-                thickness: 1.0,
-                color: Color(0x00FFFFFF),
-              ),
-              Form(
-                key: _model.formKey,
-                autovalidateMode: AutovalidateMode.disabled,
-                child: Padding(
-                  padding:
-                      const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
-                  child: SizedBox(
-                    width: double.infinity,
-                    child: TextFormField(
-                      controller: _model.correoTextController,
-                      focusNode: _model.correoFocusNode,
-                      autofillHints: const [AutofillHints.email],
-                      obscureText: false,
-                      decoration: InputDecoration(
-                        labelText: FFLocalizations.of(context).getText(
-                          'ayuklw2h' /* Correo electronico */,
-                        ),
-                        labelStyle:
-                            FlutterFlowTheme.of(context).labelMedium.override(
-                                  fontFamily: 'Readex Pro',
-                                  letterSpacing: 0.0,
-                                ),
-                        hintText: FFLocalizations.of(context).getText(
-                          'hchqh82b' /* Escribe tu correo electronico.... */,
-                        ),
-                        hintStyle:
-                            FlutterFlowTheme.of(context).labelMedium.override(
-                                  fontFamily: 'Readex Pro',
-                                  letterSpacing: 0.0,
-                                ),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: FlutterFlowTheme.of(context).alternate,
-                            width: 2.0,
-                          ),
-                          borderRadius: BorderRadius.circular(12.0),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: FlutterFlowTheme.of(context).primary,
-                            width: 2.0,
-                          ),
-                          borderRadius: BorderRadius.circular(12.0),
-                        ),
-                        errorBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: FlutterFlowTheme.of(context).error,
-                            width: 2.0,
-                          ),
-                          borderRadius: BorderRadius.circular(12.0),
-                        ),
-                        focusedErrorBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: FlutterFlowTheme.of(context).error,
-                            width: 2.0,
-                          ),
-                          borderRadius: BorderRadius.circular(12.0),
-                        ),
-                        filled: true,
-                        fillColor:
-                            FlutterFlowTheme.of(context).secondaryBackground,
-                        contentPadding: const EdgeInsetsDirectional.fromSTEB(
-                            24.0, 24.0, 20.0, 24.0),
+                      style:
+                          FlutterFlowTheme.of(context).headlineMedium.override(
+                                fontFamily: 'Inter',
+                                letterSpacing: 0.0,
+                              ),
+                    ),
+                  ),
+                  const Divider(
+                    thickness: 1.0,
+                    color: Color(0x00FFFFFF),
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
+                    child: Text(
+                      FFLocalizations.of(context).getText(
+                        '7jf3k6dt' /* Le enviaremos un correo electr... */,
                       ),
-                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                      style: FlutterFlowTheme.of(context).labelMedium.override(
                             fontFamily: 'Readex Pro',
                             letterSpacing: 0.0,
                           ),
-                      maxLines: null,
-                      keyboardType: TextInputType.emailAddress,
-                      cursorColor: FlutterFlowTheme.of(context).primary,
-                      validator: _model.correoTextControllerValidator
-                          .asValidator(context),
                     ),
                   ),
-                ),
-              ),
-              Align(
-                alignment: const AlignmentDirectional(0.0, 0.0),
-                child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
-                  child: FFButtonWidget(
-                    onPressed: () async {
-                      if (_model.formKey.currentState == null ||
-                          !_model.formKey.currentState!.validate()) {
-                        return;
-                      }
-                      if (_model.correoTextController.text.isEmpty) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                            content: Text(
-                              FFLocalizations.of(context).getText(
-                                's0fyy6rp' /* Correo electronico requerido ! */,
-                              ),
-                            ),
-                          ),
-                        );
-                        return;
-                      }
-                      await authManager.resetPassword(
-                        email: _model.correoTextController.text,
-                        context: context,
-                      );
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text(
-                            'Se ha enviado un correo a tu buzon para realizar la recuperecion de la contraseña',
-                            style: TextStyle(
-                              color: FlutterFlowTheme.of(context).primaryText,
-                            ),
-                          ),
-                          duration: const Duration(milliseconds: 4000),
-                          backgroundColor:
-                              FlutterFlowTheme.of(context).secondary,
-                        ),
-                      );
-
-                      context.pushNamed('login');
-                    },
-                    text: FFLocalizations.of(context).getText(
-                      '4cx6gnlh' /* Recuperar */,
-                    ),
-                    options: FFButtonOptions(
-                      width: 270.0,
-                      height: 50.0,
+                  const Divider(
+                    thickness: 1.0,
+                    color: Color(0x00FFFFFF),
+                  ),
+                  Form(
+                    key: _model.formKey,
+                    autovalidateMode: AutovalidateMode.disabled,
+                    child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      iconPadding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: FlutterFlowTheme.of(context).primary,
-                      textStyle:
-                          FlutterFlowTheme.of(context).titleSmall.override(
-                                fontFamily: 'Readex Pro',
-                                letterSpacing: 0.0,
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                      child: SizedBox(
+                        width: double.infinity,
+                        child: TextFormField(
+                          controller: _model.correoTextController,
+                          focusNode: _model.correoFocusNode,
+                          autofillHints: const [AutofillHints.email],
+                          obscureText: false,
+                          decoration: InputDecoration(
+                            labelText: FFLocalizations.of(context).getText(
+                              'r27uk1z7' /* Correo electronico */,
+                            ),
+                            labelStyle: FlutterFlowTheme.of(context)
+                                .labelMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                            hintText: FFLocalizations.of(context).getText(
+                              'qupeivy8' /* Escribe tu correo electronico.... */,
+                            ),
+                            hintStyle: FlutterFlowTheme.of(context)
+                                .labelMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).alternate,
+                                width: 2.0,
                               ),
-                      elevation: 3.0,
-                      borderSide: const BorderSide(
-                        color: Colors.transparent,
-                        width: 1.0,
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).primary,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                            errorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).error,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                            focusedErrorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).error,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                            filled: true,
+                            fillColor: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                                24.0, 24.0, 20.0, 24.0),
+                          ),
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Readex Pro',
+                                    letterSpacing: 0.0,
+                                  ),
+                          maxLines: null,
+                          keyboardType: TextInputType.emailAddress,
+                          cursorColor: FlutterFlowTheme.of(context).primary,
+                          validator: _model.correoTextControllerValidator
+                              .asValidator(context),
+                        ),
                       ),
                     ),
                   ),
-                ),
+                  Align(
+                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    child: Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                      child: FFButtonWidget(
+                        onPressed: () async {
+                          if (_model.formKey.currentState == null ||
+                              !_model.formKey.currentState!.validate()) {
+                            return;
+                          }
+                          if (_model.correoTextController.text.isEmpty) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text(
+                                  FFLocalizations.of(context).getText(
+                                    's0fyy6rp' /* Correo electronico requerido ! */,
+                                  ),
+                                ),
+                              ),
+                            );
+                            return;
+                          }
+                          await authManager.resetPassword(
+                            email: _model.correoTextController.text,
+                            context: context,
+                          );
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text(
+                                'Se ha enviado un correo a tu buzon para realizar la recuperecion de la contraseña',
+                                style: TextStyle(
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                ),
+                              ),
+                              duration: const Duration(milliseconds: 4000),
+                              backgroundColor:
+                                  FlutterFlowTheme.of(context).secondary,
+                            ),
+                          );
+
+                          context.pushNamed('login');
+                        },
+                        text: FFLocalizations.of(context).getText(
+                          'x9tbcrgr' /* Recuperar */,
+                        ),
+                        options: FFButtonOptions(
+                          width: 270.0,
+                          height: 50.0,
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          color: FlutterFlowTheme.of(context).primary,
+                          textStyle:
+                              FlutterFlowTheme.of(context).titleSmall.override(
+                                    fontFamily: 'Readex Pro',
+                                    letterSpacing: 0.0,
+                                  ),
+                          elevation: 3.0,
+                          borderSide: const BorderSide(
+                            color: Colors.transparent,
+                            width: 1.0,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),

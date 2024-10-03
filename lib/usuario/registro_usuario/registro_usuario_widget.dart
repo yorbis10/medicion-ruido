@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'registro_usuario_model.dart';
 export 'registro_usuario_model.dart';
 
@@ -40,7 +41,7 @@ class _RegistroUsuarioWidgetState extends State<RegistroUsuarioWidget> {
     _model.confirmaclaveTextController ??= TextEditingController();
     _model.confirmaclaveFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -272,19 +273,21 @@ class _RegistroUsuarioWidgetState extends State<RegistroUsuarioWidget> {
                                           await showDialog(
                                             context: context,
                                             builder: (alertDialogContext) {
-                                              return AlertDialog(
-                                                title: const Text(
-                                                    'Requisitos para el nombre'),
-                                                content: const Text(
-                                                    'El nombre es obligatorio y debe tener al menos 3 caracteres.'),
-                                                actions: [
-                                                  TextButton(
-                                                    onPressed: () =>
-                                                        Navigator.pop(
-                                                            alertDialogContext),
-                                                    child: const Text('Aceptar'),
-                                                  ),
-                                                ],
+                                              return WebViewAware(
+                                                child: AlertDialog(
+                                                  title: const Text(
+                                                      'Requisitos para el nombre'),
+                                                  content: const Text(
+                                                      'El nombre es obligatorio y debe tener al menos 3 caracteres.'),
+                                                  actions: [
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext),
+                                                      child: const Text('Aceptar'),
+                                                    ),
+                                                  ],
+                                                ),
                                               );
                                             },
                                           );
@@ -412,19 +415,21 @@ class _RegistroUsuarioWidgetState extends State<RegistroUsuarioWidget> {
                                           await showDialog(
                                             context: context,
                                             builder: (alertDialogContext) {
-                                              return AlertDialog(
-                                                title: const Text(
-                                                    'Requisitos para el correo'),
-                                                content: const Text(
-                                                    'El correo es obligatorio, debe tener un mínimo de 5 caracteres y seguir el formato correcto, por ejemplo: info@ssaragon.com.'),
-                                                actions: [
-                                                  TextButton(
-                                                    onPressed: () =>
-                                                        Navigator.pop(
-                                                            alertDialogContext),
-                                                    child: const Text('Aceptar'),
-                                                  ),
-                                                ],
+                                              return WebViewAware(
+                                                child: AlertDialog(
+                                                  title: const Text(
+                                                      'Requisitos para el correo'),
+                                                  content: const Text(
+                                                      'El correo es obligatorio, debe tener un mínimo de 5 caracteres y seguir el formato correcto, por ejemplo: info@ssaragon.com.'),
+                                                  actions: [
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext),
+                                                      child: const Text('Aceptar'),
+                                                    ),
+                                                  ],
+                                                ),
                                               );
                                             },
                                           );
@@ -552,19 +557,21 @@ class _RegistroUsuarioWidgetState extends State<RegistroUsuarioWidget> {
                                           await showDialog(
                                             context: context,
                                             builder: (alertDialogContext) {
-                                              return AlertDialog(
-                                                title: const Text(
-                                                    'Requisitos para el número de teléfono'),
-                                                content: const Text(
-                                                    'El campo de número de teléfono debe contener solo números, con un mínimo de 7 caracteres y un máximo de 15. Ejemplo: 4441122.'),
-                                                actions: [
-                                                  TextButton(
-                                                    onPressed: () =>
-                                                        Navigator.pop(
-                                                            alertDialogContext),
-                                                    child: const Text('Aceptar'),
-                                                  ),
-                                                ],
+                                              return WebViewAware(
+                                                child: AlertDialog(
+                                                  title: const Text(
+                                                      'Requisitos para el número de teléfono'),
+                                                  content: const Text(
+                                                      'El campo de número de teléfono debe contener solo números, con un mínimo de 7 caracteres y un máximo de 15. Ejemplo: 4441122.'),
+                                                  actions: [
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext),
+                                                      child: const Text('Aceptar'),
+                                                    ),
+                                                  ],
+                                                ),
                                               );
                                             },
                                           );
@@ -667,7 +674,7 @@ class _RegistroUsuarioWidgetState extends State<RegistroUsuarioWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .primaryBackground,
                                                 suffixIcon: InkWell(
-                                                  onTap: () => setState(
+                                                  onTap: () => safeSetState(
                                                     () => _model
                                                             .claveVisibility =
                                                         !_model.claveVisibility,
@@ -711,19 +718,21 @@ class _RegistroUsuarioWidgetState extends State<RegistroUsuarioWidget> {
                                           await showDialog(
                                             context: context,
                                             builder: (alertDialogContext) {
-                                              return AlertDialog(
-                                                title: const Text(
-                                                    'Requisitos de la contraseña'),
-                                                content: const Text(
-                                                    'La contraseña debe contener: letras mayúsculas y minúsculas, números y caracteres especiales'),
-                                                actions: [
-                                                  TextButton(
-                                                    onPressed: () =>
-                                                        Navigator.pop(
-                                                            alertDialogContext),
-                                                    child: const Text('Aceptar'),
-                                                  ),
-                                                ],
+                                              return WebViewAware(
+                                                child: AlertDialog(
+                                                  title: const Text(
+                                                      'Requisitos de la contraseña'),
+                                                  content: const Text(
+                                                      'La contraseña debe contener: letras mayúsculas y minúsculas, números y caracteres especiales'),
+                                                  actions: [
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext),
+                                                      child: const Text('Aceptar'),
+                                                    ),
+                                                  ],
+                                                ),
                                               );
                                             },
                                           );
@@ -827,7 +836,7 @@ class _RegistroUsuarioWidgetState extends State<RegistroUsuarioWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .primaryBackground,
                                                 suffixIcon: InkWell(
-                                                  onTap: () => setState(
+                                                  onTap: () => safeSetState(
                                                     () => _model
                                                             .confirmaclaveVisibility =
                                                         !_model
@@ -872,18 +881,21 @@ class _RegistroUsuarioWidgetState extends State<RegistroUsuarioWidget> {
                                           await showDialog(
                                             context: context,
                                             builder: (alertDialogContext) {
-                                              return AlertDialog(
-                                                title: const Text('Con'),
-                                                content: const Text(
-                                                    'La confirmación de contraseña debe coincidir exactamente con la contraseña ingresada previamente.'),
-                                                actions: [
-                                                  TextButton(
-                                                    onPressed: () =>
-                                                        Navigator.pop(
-                                                            alertDialogContext),
-                                                    child: const Text('Aceptar'),
-                                                  ),
-                                                ],
+                                              return WebViewAware(
+                                                child: AlertDialog(
+                                                  title: const Text(
+                                                      'Confirmar contraseña'),
+                                                  content: const Text(
+                                                      'La confirmación de contraseña debe coincidir exactamente con la contraseña ingresada previamente.'),
+                                                  actions: [
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext),
+                                                      child: const Text('Aceptar'),
+                                                    ),
+                                                  ],
+                                                ),
                                               );
                                             },
                                           );

@@ -26,7 +26,7 @@ class _AdministrarUsuariosWidgetState extends State<AdministrarUsuariosWidget>
     super.initState();
     _model = createModel(context, () => AdministrarUsuariosModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

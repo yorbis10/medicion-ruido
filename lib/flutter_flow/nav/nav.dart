@@ -144,6 +144,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.Document,
             ),
           ),
+        ),
+        FFRoute(
+          name: 'MapaDeCalor',
+          path: '/MapaDeCalor',
+          builder: (context, params) => const MapaDeCalorWidget(),
+        ),
+        FFRoute(
+          name: 'Reporte',
+          path: '/reporte',
+          builder: (context, params) => const ReporteWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

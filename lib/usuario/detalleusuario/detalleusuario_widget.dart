@@ -9,6 +9,7 @@ import '/usuario/admin/eliminar_usuario/eliminar_usuario_widget.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'detalleusuario_model.dart';
 export 'detalleusuario_model.dart';
 
@@ -66,7 +67,7 @@ class _DetalleusuarioWidgetState extends State<DetalleusuarioWidget>
       this,
     );
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -347,7 +348,7 @@ class _DetalleusuarioWidgetState extends State<DetalleusuarioWidget>
                             builder: (context) => SwitchListTile.adaptive(
                               value: _model.switchListTileValue ??= true,
                               onChanged: (newValue) async {
-                                setState(() =>
+                                safeSetState(() =>
                                     _model.switchListTileValue = newValue);
                               },
                               title: Text(
@@ -393,11 +394,13 @@ class _DetalleusuarioWidgetState extends State<DetalleusuarioWidget>
                   enableDrag: false,
                   context: context,
                   builder: (context) {
-                    return GestureDetector(
-                      onTap: () => FocusScope.of(context).unfocus(),
-                      child: Padding(
-                        padding: MediaQuery.viewInsetsOf(context),
-                        child: const EliminarUsuarioWidget(),
+                    return WebViewAware(
+                      child: GestureDetector(
+                        onTap: () => FocusScope.of(context).unfocus(),
+                        child: Padding(
+                          padding: MediaQuery.viewInsetsOf(context),
+                          child: const EliminarUsuarioWidget(),
+                        ),
                       ),
                     );
                   },

@@ -16,5 +16,7 @@ export '/usuario/administrar_usuarios/administrar_usuarios_widget.dart'
     show AdministrarUsuariosWidget;
 export '/usuario/admin/menu_aministracion/menu_aministracion_widget.dart'
     show MenuAministracionWidget;
-export '/usuario/admin/detalleusuario/detalleusuario_widget.dart'
+export '/usuario/detalleusuario/detalleusuario_widget.dart'
     show DetalleusuarioWidget;
+export '/mapa_de_calor/mapa_de_calor_widget.dart' show MapaDeCalorWidget;
+export '/reporte/reporte_widget.dart' show ReporteWidget;

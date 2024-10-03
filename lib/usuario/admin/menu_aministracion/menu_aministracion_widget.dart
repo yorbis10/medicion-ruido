@@ -25,7 +25,7 @@ class _MenuAministracionWidgetState extends State<MenuAministracionWidget>
     super.initState();
     _model = createModel(context, () => MenuAministracionModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -174,7 +174,7 @@ class _MenuAministracionWidgetState extends State<MenuAministracionWidget>
                 padding: const EdgeInsetsDirectional.fromSTEB(24.0, 12.0, 24.0, 0.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
-                    'p2mp4roa' /* Este es el mEnu para los usuar... */,
+                    'p2mp4roa' /* Este es el menu para los usuar... */,
                   ),
                   textAlign: TextAlign.center,
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -370,7 +370,7 @@ class _MenuAministracionWidgetState extends State<MenuAministracionWidget>
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        'lcykfkva' /* Medición en vivo */,
+                                                        'lxgo8mfb' /* Medición en vivo */,
                                                       ),
                                                       textAlign:
                                                           TextAlign.center,
@@ -407,39 +407,53 @@ class _MenuAministracionWidgetState extends State<MenuAministracionWidget>
                                           ),
                                           child: Padding(
                                             padding: const EdgeInsets.all(12.0),
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                Icon(
-                                                  Icons.whatshot_outlined,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primary,
-                                                  size: 44.0,
-                                                ),
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 12.0, 0.0, 4.0),
-                                                  child: Text(
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                      'n1pl51rp' /* Mapas de calor */,
-                                                    ),
-                                                    textAlign: TextAlign.center,
-                                                    style: FlutterFlowTheme.of(
+                                            child: InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                context
+                                                    .pushNamed('MapaDeCalor');
+                                              },
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Icon(
+                                                    Icons.map_outlined,
+                                                    color: FlutterFlowTheme.of(
                                                             context)
-                                                        .displaySmall
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          fontSize: 25.0,
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                                        .primary,
+                                                    size: 44.0,
                                                   ),
-                                                ),
-                                              ],
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 12.0,
+                                                                0.0, 4.0),
+                                                    child: Text(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'lcykfkva' /* Mapa de Calor */,
+                                                      ),
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .displaySmall
+                                                          .override(
+                                                            fontFamily: 'Inter',
+                                                            fontSize: 25.0,
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -461,39 +475,52 @@ class _MenuAministracionWidgetState extends State<MenuAministracionWidget>
                                           ),
                                           child: Padding(
                                             padding: const EdgeInsets.all(12.0),
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                Icon(
-                                                  Icons.downloading,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primary,
-                                                  size: 44.0,
-                                                ),
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 12.0, 0.0, 4.0),
-                                                  child: Text(
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                      'bsesskj7' /* Reportes */,
-                                                    ),
-                                                    textAlign: TextAlign.center,
-                                                    style: FlutterFlowTheme.of(
+                                            child: InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                context.pushNamed('Reporte');
+                                              },
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Icon(
+                                                    Icons.downloading_sharp,
+                                                    color: FlutterFlowTheme.of(
                                                             context)
-                                                        .displaySmall
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          fontSize: 25.0,
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                                        .primary,
+                                                    size: 44.0,
                                                   ),
-                                                ),
-                                              ],
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 12.0,
+                                                                0.0, 4.0),
+                                                    child: Text(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        't4s8g4cv' /* Reporte */,
+                                                      ),
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .displaySmall
+                                                          .override(
+                                                            fontFamily: 'Inter',
+                                                            fontSize: 25.0,
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
                                             ),
                                           ),
                                         ),

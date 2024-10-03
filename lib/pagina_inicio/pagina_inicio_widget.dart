@@ -130,7 +130,7 @@ class _PaginaInicioWidgetState extends State<PaginaInicioWidget>
       ),
     });
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -268,7 +268,7 @@ class _PaginaInicioWidgetState extends State<PaginaInicioWidget>
                             const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 16.0),
                         child: FFButtonWidget(
                           onPressed: () async {
-                            context.pushNamed('RegistroUsuario');
+                            context.pushNamed('login');
                           },
                           text: FFLocalizations.of(context).getText(
                             '4979asxn' /* Ingresar */,

@@ -109,7 +109,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'w531dvea': {
       'es': 'MACA',
-      'en': 'Noise Pollution Monitoring and Alerts',
+      'en': 'MACA',
     },
     'ndp48nv5': {
       'es': 'Crear Cuenta',
@@ -161,15 +161,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '2goszjsj': {
       'es': 'El nombre no debe exceder mas de 150  caracteres',
-      'en': '',
+      'en': 'The name must not exceed more than 150 characters',
     },
     'coyeycp0': {
       'es': 'Please choose an option from the dropdown',
-      'en': '',
+      'en': 'Please choose an option from the dropdown',
     },
     'qu5rlvyo': {
       'es': 'El correo es obligatorio Ej. info@ssaragon.com\n',
-      'en': 'Email is required',
+      'en': 'Email is required E.g. info@ssaragon.com',
     },
     'p8dmshzk': {
       'es': 'Cantidad de caracteres  del correo no es correcto',
@@ -177,11 +177,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'k0fa5zbs': {
       'es': 'El formato del correo no es valido',
-      'en': '',
+      'en': 'The email format is not valid',
     },
     '6u1ee103': {
       'es': 'Please choose an option from the dropdown',
-      'en': '',
+      'en': 'Please choose an option from the dropdown',
     },
     'uqxanzuz': {
       'es': 'El número de telefono es obligatoria',
@@ -189,23 +189,23 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ovv327b6': {
       'es': 'Solo números,  ej: 4441122',
-      'en': '',
+      'en': 'Numbers only, ex: 4441122',
     },
     'koy67ut4': {
       'es': 'No puede tenes mas de 15 caracteres',
-      'en': '',
+      'en': 'You cannot have more than 15 characters',
     },
     'm3jlci3n': {
       'es': 'El numero ingresado no es correcto',
-      'en': '',
+      'en': 'The number entered is not correct',
     },
     'sf49vlcn': {
       'es': 'Please choose an option from the dropdown',
-      'en': '',
+      'en': 'Please choose an option from the dropdown',
     },
     '5i54izd0': {
       'es': 'La contraseña es obligatoria',
-      'en': '',
+      'en': 'Password is required',
     },
     'h0nh5vvp': {
       'es': 'Debe ingresar MInimo 6 caracteres',
@@ -217,11 +217,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'zsw95hs0': {
       'es': 'La contraseña no cumple con los requisitos de seguridad\n',
-      'en': '',
+      'en': 'The password does not meet the security requirements',
     },
     'k9by210k': {
       'es': 'Please choose an option from the dropdown',
-      'en': '',
+      'en': 'Please choose an option from the dropdown',
     },
     'qbl2e27w': {
       'es': 'La confirmacion de contraseña es obligatoria',
@@ -229,26 +229,26 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '9gipsxa4': {
       'es': 'Please choose an option from the dropdown',
-      'en': '',
+      'en': 'Please choose an option from the dropdown',
     },
     'hvkuw0ar': {
-      'es': 'Home',
-      'en': 'home',
+      'es': 'Inicio',
+      'en': 'Start',
     },
   },
   // login
   {
     'fcf8sww7': {
       'es': 'MACA',
-      'en': 'Noise Pollution Monitoring and Alerts',
+      'en': 'MACA',
     },
     'jbm0vj4k': {
       'es': 'Monitoreo y Alerta de Contaminación Acústica ',
-      'en': 'Welcome back',
+      'en': 'Noise Pollution Monitoring and Alerts',
     },
     '2inq44ae': {
       'es': 'Ingresa tus datos',
-      'en': 'Let\'s get started by filling out the form below.',
+      'en': 'Enter your details',
     },
     'dh2q240o': {
       'es': 'Email',
@@ -260,15 +260,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'll2nvrhv': {
       'es': 'Iniciar sesión',
-      'en': 'Log in',
+      'en': 'Login',
     },
     '1qhjel88': {
       'es': 'Registrate aquí',
-      'en': 'sign up here',
+      'en': 'Register here',
     },
     'kahc4m9v': {
       'es': '¿Olvidaste la clave?',
-      'en': '',
+      'en': 'Forgot your password?',
     },
     'mxnp4isy': {
       'es': 'El correo es obligatorio',
@@ -283,8 +283,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'The email format is not valid',
     },
     'qhhm4jv8': {
-      'es': 'Please choose an option from the dropdown',
-      'en': '',
+      'es': 'Por favor elija una opción del menú desplegable',
+      'en': 'Please choose an option from the drop-down menu',
     },
     'djmyy7bb': {
       'es': 'La contraseña es obligatoria',
@@ -292,149 +292,76 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ksapcnjs': {
       'es': 'Debe ingresar MInimo 6 caracteres',
-      'en': 'You must enter a minimum of 6 characters',
+      'en': 'You must enter at least 6 characters',
     },
     '9inopavz': {
-      'es': 'La contraseña no debe superar los 25 caracteres',
-      'en': '',
+      'es': 'La contraseña no debe superar los 6 caracteres',
+      'en': 'The password must not exceed 6 characters',
     },
     '1st2vfhx': {
       'es': 'La contraseña no cumple con los requisitos de seguridad',
       'en': 'The password does not meet the security requirements',
     },
     '12wfpksk': {
-      'es': 'Please choose an option from the dropdown',
-      'en': '',
+      'es': 'Por favor elija una opción del menú desplegable',
+      'en': 'Please choose an option from the drop-down menu',
     },
     'mfyuz3o2': {
-      'es': 'Home',
-      'en': 'home',
+      'es': 'Inicio',
+      'en': 'Start',
     },
   },
   // PaginaInicio
   {
     'w8wi580t': {
       'es': 'MACA',
-      'en': 'Noise Pollution Monitoring and Alerts',
+      'en': 'MACA',
     },
     '70bb80nr': {
       'es': 'Monitoreo y Alerta de Contaminación Acústica ',
-      'en':
-          'Thank you for joining! Log in or create your account below and start your journey!',
+      'en': 'Noise Pollution Monitoring and Alerts',
     },
     '4979asxn': {
       'es': 'Ingresar',
       'en': 'Get into',
     },
     'csgbpopf': {
-      'es': 'Home',
-      'en': '',
+      'es': 'Inicio',
+      'en': 'Start',
     },
   },
   // RuidoEnVivo
   {
-    '73bv5nhd': {
-      'es': 'Tasks',
-      'en': 'Tasks',
-    },
-    'fb97yhwx': {
-      'es': 'Completed',
-      'en': 'Completed',
-    },
-    'g9nbl1jg': {
-      'es': 'Last 30 Days',
-      'en': 'Last 30 Days',
-    },
-    'ee6x2u8j': {
-      'es': 'Avg. Grade',
-      'en': 'Avg. Grade',
-    },
-    'ji2sfpm8': {
-      'es': 'Tasks',
-      'en': 'Tasks',
-    },
-    'dmvphtyt': {
-      'es': 'A summary of outstanding tasks.',
-      'en': 'A summary of outstanding tasks.',
-    },
-    'g9a8twf8': {
-      'es': 'Task Type',
-      'en': 'Task Type',
-    },
-    'wzjo2hdk': {
-      'es':
-          'Task Description here this one is really long and it goes over maybe? And goes to two lines.',
-      'en':
-          'Task Description here this one is really long and it goes over maybe? And it goes to two lines.',
-    },
-    'ylf8gsz0': {
-      'es': 'Due',
-      'en': 'Due',
-    },
-    'xeilczr7': {
-      'es': 'Today, 5:30pm',
-      'en': 'Today, 5:30pm',
-    },
-    'o2lwwg4k': {
-      'es': 'Update',
-      'en': 'Update',
-    },
-    '4aw554ci': {
-      'es': '1',
-      'en': '1',
-    },
-    'v0ec18ks': {
-      'es': 'Task Type',
-      'en': 'Task Type',
-    },
-    '4glpna1a': {
-      'es':
-          'Task Description here this one is really long and it goes over maybe? And goes to two lines.',
-      'en':
-          'Task Description here this one is really long and it goes over maybe? And it goes to two lines.',
-    },
-    'fzx9iccj': {
-      'es': 'Due',
-      'en': 'Due',
-    },
-    'k3cievzb': {
-      'es': 'Today, 5:30pm',
-      'en': 'Today, 5:30pm',
-    },
-    'qzv4np63': {
-      'es': 'Update',
-      'en': 'Update',
-    },
-    'm05zzexx': {
-      'es': '1',
-      'en': '1',
+    'h3s495y9': {
+      'es': 'Medicion en Vivo',
+      'en': 'Live Measurement',
     },
     '7yfbc8ae': {
-      'es': 'Home',
-      'en': 'home',
+      'es': 'Inicio',
+      'en': 'Start',
     },
   },
   // PerfilAdmin
   {
+    '8bbey2lz': {
+      'es': 'Perfil de Administración',
+      'en': 'Administration Profile',
+    },
     'lz2n0zo6': {
       'es': 'Editar Perfil',
-      'en': 'Edit profile',
+      'en': 'Edit Profile',
     },
     'qnq7h7ay': {
       'es': 'Cambiar Contraseña',
-      'en': '',
+      'en': 'Change Password',
     },
     'gamjts0z': {
       'es': 'Panel de Administacion',
-      'en': 'Account settings',
+      'en': 'Administration Panel',
     },
     't02xr18p': {
       'es': 'Cerrar sesión',
-      'en': 'Sign off',
-    },
-    '8bbey2lz': {
-      'es': 'Perfil de Administración',
-      'en': '',
+      'en': 'Log out',
     },
     'm0s6wl0q': {
       'es': '__',
@@ -445,155 +372,156 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'ljsg1yzt': {
       'es': 'Correo',
-      'en': '',
+      'en': 'Mail',
     },
     '44hzli87': {
       'es': 'Nombre completo',
-      'en': '',
+      'en': 'Full name',
     },
     'qcj0dfrx': {
       'es': 'Número de teléfono',
-      'en': '',
+      'en': 'Phone number',
     },
     '257l0k26': {
       'es': 'Guardar Cambios',
-      'en': '',
+      'en': 'Save Changes',
     },
     'ncna7nbx': {
       'es': 'Editar perfil',
-      'en': '',
+      'en': 'Edit profile',
     },
   },
   // RecuperarClave
   {
-    'mle41a9i': {
+    '9pse8kx0': {
       'es': 'Has olvidado tu contraseña',
-      'en': '',
+      'en': 'You have forgotten your password',
     },
-    'tdlcm4ob': {
+    '7jf3k6dt': {
       'es':
           'Le enviaremos un correo electrónico con un enlace para restablecer su contraseña; ingrese el correo electrónico asociado con su cuenta a continuación.',
-      'en': '',
+      'en':
+          'We\'ll send you an email with a link to reset your password; enter the email associated with your account below.',
     },
-    'ayuklw2h': {
+    'r27uk1z7': {
       'es': 'Correo electronico',
-      'en': '',
+      'en': 'Email',
     },
-    'hchqh82b': {
+    'qupeivy8': {
       'es': 'Escribe tu correo electronico....',
-      'en': '',
+      'en': 'Enter your email....',
     },
-    'qn2hepbo': {
+    'zoz80tix': {
       'es': 'El correo es obligatorio  Ej. info@ssaragon.com',
-      'en': '',
+      'en': 'Email is required E.g. info@ssaragon.com',
     },
-    'y1kcrio3': {
+    'ja56n979': {
       'es': 'Cantidad de caracteres  del correo no es correcto',
-      'en': '',
+      'en': 'The number of characters in the email is not correct',
     },
-    'b9kvmb9g': {
+    'rbknxa61': {
       'es': 'El formato del correo no es valido',
-      'en': '',
+      'en': 'The email format is not valid',
     },
-    'mwqo8tkn': {
+    'xly0d0zo': {
       'es': 'Please choose an option from the dropdown',
-      'en': '',
+      'en': 'Please choose an option from the dropdown',
     },
-    '4cx6gnlh': {
+    'x9tbcrgr': {
       'es': 'Recuperar',
-      'en': '',
+      'en': 'Recover',
     },
     'xstolvq4': {
       'es': 'Recuperación de Contraseña',
-      'en': '',
+      'en': 'Password Recovery',
     },
     'wa825cy3': {
       'es': 'Home',
-      'en': 'home',
+      'en': 'Home',
     },
   },
   // PerfilUsuario
   {
     'yg1r02kp': {
       'es': 'Editar Perfil',
-      'en': '',
+      'en': 'Edit Profile',
     },
     'g3g3rn49': {
       'es': 'Cambiar Contraseña',
-      'en': '',
+      'en': 'Change Password',
     },
     'w5hdj8z1': {
       'es': 'Eliminar Cuenta',
-      'en': '',
+      'en': 'Delete Account',
     },
     '08powxhm': {
       'es': 'Cerrar sesión',
-      'en': '',
+      'en': 'Log out',
     },
-    'h3s495y9': {
+    '3846dk3r': {
       'es': 'Perfil de Usuario',
-      'en': '',
+      'en': 'User Profile',
     },
     'p5cu33np': {
       'es': '__',
-      'en': '',
+      'en': '__',
     },
   },
   // AdministrarUsuarios
   {
     'a6yzujlr': {
       'es': 'Selecciona el usuario',
-      'en': '',
+      'en': 'Select the user',
     },
     '7zg1c4qw': {
       'es': 'Gestionar Usuarios',
-      'en': '',
+      'en': 'Manage Users',
     },
     '4zq0q4kd': {
       'es': 'Home',
-      'en': 'home',
+      'en': 'Home',
     },
   },
   // MenuAministracion
   {
     'p2mp4roa': {
-      'es': 'Este es el mEnu para los usuarios con rol de administrador',
-      'en': '',
+      'es': 'Este es el menu para los usuarios con rol de administrador',
+      'en': 'This is the menu for users with administrator role',
     },
     '8ag2yi0d': {
       'es': 'Menu Administracion',
-      'en': '',
+      'en': 'Administration Menu',
     },
     'g6tlcyj2': {
       'es': 'Usuarios',
-      'en': '',
+      'en': 'Users',
+    },
+    'lxgo8mfb': {
+      'es': 'Medición en vivo',
+      'en': 'Live measurement',
     },
     'lcykfkva': {
-      'es': 'Medición en vivo',
-      'en': '',
+      'es': 'Mapa de Calor',
+      'en': 'Heat Map',
     },
-    'n1pl51rp': {
-      'es': 'Mapas de calor',
-      'en': '',
-    },
-    'bsesskj7': {
-      'es': 'Reportes',
-      'en': '',
+    't4s8g4cv': {
+      'es': 'Reporte',
+      'en': 'Report',
     },
     'yxabhsv4': {
       'es': 'Panel de Administración',
-      'en': '',
+      'en': 'Administration Panel',
     },
     'zwv83t39': {
-      'es': 'Home',
-      'en': 'home',
+      'es': 'Inicio',
+      'en': 'Start',
     },
   },
   // Detalleusuario
   {
     'oq63vs4h': {
       'es': 'Es Administrador',
-      'en': '',
+      'en': 'He is an Administrator',
     },
     '2v9kn4ay': {
       'es': '',
@@ -601,49 +529,71 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '1swir9bp': {
       'es': 'Eliminar',
-      'en': '',
+      'en': 'Eliminate',
     },
     'm3zjshu0': {
       'es': 'Home',
-      'en': 'home',
+      'en': 'Home',
+    },
+  },
+  // MapaDeCalor
+  {
+    'vxcl94ux': {
+      'es': 'Mapa de Calor',
+      'en': 'Heat Map',
+    },
+    'jwq5qu3k': {
+      'es': 'Home',
+      'en': 'Home',
+    },
+  },
+  // Reporte
+  {
+    'ur8belpj': {
+      'es': 'Reporte',
+      'en': 'Report',
+    },
+    'otr21hd3': {
+      'es': 'Inicio',
+      'en': 'Start',
     },
   },
   // CambiarClave
   {
     'vjyexf7b': {
       'es': 'Cambiar la contraseña',
-      'en': '',
+      'en': 'Change password',
     },
     'io5t7hlr': {
       'es': 'Contraseña actual',
-      'en': '',
+      'en': 'Current password',
     },
     '6xosvjrv': {
       'es': 'Nueva contraseña',
-      'en': '',
+      'en': 'New password',
     },
     'iuovvwrc': {
       'es': 'Confirmar nueva contraseña',
-      'en': '',
+      'en': 'Confirm new password',
     },
     'l9varrp3': {
       'es': 'Cambiar la contraseña',
-      'en': '',
+      'en': 'Change password',
     },
   },
   // EliminarUsuario
   {
     'gftuzb6t': {
       'es': 'Deseas eliminar la cuenta del usuario?',
-      'en': '',
+      'en': 'Do you want to delete the user account?',
     },
     '73fzdvpu': {
       'es': 'Eliminar Cuenta',
-      'en': '',
+      'en': 'Delete Account',
     },
     'qgqt0jia': {
       'es': 'Cancelar',
-      'en': '',
+      'en': 'Cancel',
     },
   },
   // Miscellaneous
@@ -707,44 +657,44 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
           'The authentication credential provided is incorrect, malformed, or expired',
     },
     '6x6eb5ry': {
-      'es': '',
-      'en': '',
+      'es': 'Formato del archivo no valido',
+      'en': 'Invalid file format',
     },
     'u5bt4k7f': {
-      'es': '',
-      'en': '',
+      'es': 'Subiendo archivo...',
+      'en': 'Uploading file...',
     },
     'bfo0t3jz': {
-      'es': '',
-      'en': '',
+      'es': 'éxito',
+      'en': 'success',
     },
     'jvjxs8xk': {
-      'es': '',
-      'en': '',
+      'es': 'no se pudieron cargar los datos',
+      'en': 'could not load data',
     },
     'szziuwj4': {
       'es': '',
       'en': '',
     },
     '7imp5912': {
-      'es': '',
-      'en': '',
+      'es': 'Elegir fuente',
+      'en': 'Choose font',
     },
     'edh5nsya': {
-      'es': '',
-      'en': '',
+      'es': 'Galería',
+      'en': 'Gallery',
     },
     'yarius84': {
-      'es': '',
-      'en': '',
+      'es': 'Galería (foto)',
+      'en': 'Gallery (photo)',
     },
     'wxdn2kcv': {
-      'es': '',
-      'en': '',
+      'es': 'Galería (video)',
+      'en': 'Gallery (video)',
     },
     '2vx9gs71': {
-      'es': '',
-      'en': '',
+      'es': 'Camara',
+      'en': 'Camera',
     },
     'lj2jlir3': {
       'es': '',
